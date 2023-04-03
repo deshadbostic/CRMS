@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/deshadbostic/CRMS/issues"
   },
-  "homepage": "https://github.com/deshadbostic/CRMS#readme"
+  "homepage": "https://github.com/deshadbostic/CRMS#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

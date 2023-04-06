@@ -17,7 +17,7 @@ const mysql = require('mysql');
 // // db setup
 // app.use(require('connect-flash')());
 
-var con = mysql.createPool({
+var con = mysql.createConnection({
   host: "sql.freedb.tech",
   port:'3306',
   user: "freedb_Bostic",

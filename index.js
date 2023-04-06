@@ -3,7 +3,7 @@ const express = require("express");
 const path=require('path');
 const app=express();
 const bodyParser = require('body-parser');
-
+const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -17,11 +17,12 @@ const mysql = require('mysql');
 // // db setup
 // app.use(require('connect-flash')());
 
-var con = mysql.createConnection({
-  host: "sql.freedb.tech:3306",
+var con = mysql.createPool({
+  host: "sql.freedb.tech",
+  port:'3306',
   user: "freedb_Bostic",
   password: '8pup@G4K#3TBcGU',
-  database: "freedb_CRSMDB"
+  database: "freedb_CRMSDB"
 });
 
 con.connect(function(err) {
@@ -35,11 +36,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); 
 
 
-app.use(cors({
-  origin: process.env.DOMAIN_NAME,
-  methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
-  credentials: false
-}));
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "http://localhost:5000");
@@ -53,7 +49,6 @@ app.use(cors({
 //    }});
 
 
-const multer = require('multer');
   
 
 
@@ -118,7 +113,7 @@ app.use(expressValidator({
 let users = require('./routers/customers.js');
 
 
-app.use('/customers',users);
+//app.use('/customers',users);
 
 
 app.use(express.static(path.join(__dirname,"public" )));
@@ -136,11 +131,10 @@ app.get('*',(req,res,next)=>{
 });
 app.get('/',(req,res) =>{ 
   //req.flash('message','custom message from flash')
-  console.log(req.isAuthenticated());
   console.log(req.session);
   //console.log(req.flash('error')[0]);
   //console.log(res.locals.user)
-  res.send(index.html)
+  res.sendFile(__dirname+"/public/html/index.html")
 
 });
 

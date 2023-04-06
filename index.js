@@ -3,7 +3,7 @@ const express = require("express");
 const path=require('path');
 const app=express();
 const bodyParser = require('body-parser');
-const passport = require('passport');
+
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -13,14 +13,14 @@ const mysql = require('mysql');
 
 //passport config
    //console.log(req.session)
-require("./config/passport")(passport);
-// db setup
-app.use(require('connect-flash')());
+// require("./config/passport")(passport);
+// // db setup
+// app.use(require('connect-flash')());
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "pma",
-  password: "",
+  host: "sql.freedb.tech:3306",
+  user: "freedb_Bostic",
+  password: '8pup@G4K#3TBcGU',
   database: "freedb_CRSMDB"
 });
 
@@ -59,7 +59,7 @@ const multer = require('multer');
 
 //bring in dbmodels
 
-let User= require('./models/users');
+let User= require('./models/customers');
 
 app.use(cookieParser('pass'));
 //express session middleware
@@ -72,8 +72,8 @@ app.use(cookieParser('pass'));
   }));
 
 //passport middleware
-app.use(passport.initialize());
-  app.use(passport.session());
+// app.use(passport.initialize());
+//   app.use(passport.session());
 
 //express mesages middleware
 
@@ -115,14 +115,12 @@ app.use(expressValidator({
 
 
 //router files
-let users = require('./routers/users.js');
+let users = require('./routers/customers.js');
 
 
-app.use('/users',users);
+app.use('/customers',users);
 
-app.use('/videos',videos);
 
-app.use('/admin',admin);
 app.use(express.static(path.join(__dirname,"public" )));
 
 

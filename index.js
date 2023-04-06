@@ -10,26 +10,49 @@ const session = require('express-session');
 const fs = require('fs');
 const mysql = require('mysql');
 
-
+const Sequelize = require('sequelize');
 //passport config
    //console.log(req.session)
 // require("./config/passport")(passport);
 // // db setup
 // app.use(require('connect-flash')());
 
-var con = mysql.createConnection({
+const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic","3TBcGU",{
   host: "sql.freedb.tech",
   port:'3306',
-  user: "freedb_Bostic",
-  password: '8pup@G4K#3TBcGU',
-  database: "freedb_CRMSDB"
+  dialect: "mysql",
+  dialectModule:require("mysql")
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+async function operation() {
+  return new Promise(function(resolve, reject) {
+    sequelize.authenticate()
+      .then(() => {
+        console.log('Connection has been established successfully.'); // eslint-disable-line no-console
 
+        db.sequelize.sync({ force: true }).then(() => {
+          console.log("Drop and re-sync db.")
+          useRoutes()
+        })
+        resolve(sequelize) // successfully fill promise
+      })
+      .catch((err) => {
+        console.error('Unable to connect to the database:', err); // eslint-disable-line no-console
+        reject(err) // reject promise with error
+      });
+  });
+}
+
+
+operation()
+  .then((sequelize) => {
+    // Export db as a module
+    module.exports.db = db;
+  })
+  .catch((err) => {
+    // Handle error here
+    console.error('Failed to establish database connection:', err);
+  });
 
 //body parser setup
 app.use(bodyParser.urlencoded({extended:false}));

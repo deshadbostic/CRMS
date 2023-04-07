@@ -17,43 +17,41 @@ const Sequelize = require('sequelize');
 // // db setup
 // app.use(require('connect-flash')());
 
-const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic","3TBcGU",{
+const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic",'8pup@G4K#3TBcGU',{
   host: "sql.freedb.tech",
   port:'3306',
   dialect: "mysql",
-  dialectModule:require("mysql")
+  dialectModule:require("mysql2")
 });
 
-async function operation() {
+ function operation() {
   return new Promise(function(resolve, reject) {
-    sequelize.authenticate()
-      .then(() => {
-        console.log('Connection has been established successfully.'); // eslint-disable-line no-console
-
-        db.sequelize.sync({ force: true }).then(() => {
-          console.log("Drop and re-sync db.")
-          useRoutes()
-        })
-        resolve(sequelize) // successfully fill promise
+   
+     
+      console.log('Connection has been established successfully.');
+    
+        resolve(p) // successfully fill promise
       })
       .catch((err) => {
         console.error('Unable to connect to the database:', err); // eslint-disable-line no-console
         reject(err) // reject promise with error
       });
-  });
-}
+  }
+var db = {};
 
-
-operation()
-  .then((sequelize) => {
+sequelize.sync().then(() => {
+  console.info('INFO - Database connected.')
     // Export db as a module
-    module.exports.db = db;
-  })
-  .catch((err) => {
-    // Handle error here
-    console.error('Failed to establish database connection:', err);
-  });
+    db.sequelize = sequelize;
+    db.Sequelize = Sequelize;
+        module.exports.db = db;
+        let User= require('./models/customers');
+ })
+ .catch(err => {
+  console.error('ERROR - Unable to connect to the database:', err)
+ })
 
+  module.exports = db;
 //body parser setup
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); 
@@ -77,7 +75,7 @@ app.use(bodyParser.json());
 
 //bring in dbmodels
 
-let User= require('./models/customers');
+
 
 app.use(cookieParser('pass'));
 //express session middleware

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "bootstrap-4.5.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+
+        <header>
+            <img class ="logo" src="img/toon1.jpg" alt="">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="vehicles.html" >Vehicles</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="#" id="vehicles">Rentals</a></li>
+                </ul>
+            </nav>
+            <a id="contact" class="cta" href="#"><button>Contact</button></a>
+           </header>
+
+           <div class="container" id = "Rcontainer">
+            <div class="Rcontact-box">
+                <div class="rleft">
+                    <div class="left-top">
+                        <div class="left-top-pic"></div>
+                        <div class="right" id="Payment">
+                            <h3 id="Vinfo_lbl">Payment Info</h3>
+                            <input type="text" class="field" placeholder="Amount Charged">
+                            <input type="text" class="field" placeholder="Payment Method">
+                            <input type="text" class="field" placeholder="Outstanding Balance">
+                        </div>
+    
+                    </div>
+                    
+                    <div class="left-btm">
+                      
+                        <hr><h3 id="Vinfo_lbl">Customer Info</h3>
+                        <input type="text" class="field" placeholder="Glenda Gay">
+                        <input type="text" class="field" placeholder="Jordan Ave. St George">
+                        <input type="email" class="field" placeholder="glenda.gay45@gmail.com">
+                    </div>
+                </div>
+                <div class="right">
+                    <h3 id="Vinfo_lbl">Vehicle Info</h3>
+                    <input type="text" class="field" placeholder="Make: Toyota">
+                    <input type="text" class="field" placeholder="Model: Prius">
+                    <input type="text" class="field" placeholder="Plate: A695"><hr>
+                  
+                    <h3 id="Vinfo_lbl">Rental Agreement </h3>
+
+                    <input type="text" class="field" placeholder="Rental Period">
+                    <input type="text" class="field" placeholder="Rental Rate">
+                    <input type="text" class="field" placeholder="Additional Charges">
+                </div>
+
+                <div class="right">
+                    <h3 id="Vinfo_lbl">Rental Status</h3>
+                    <input type="email" class="field" placeholder="Currently Rented">
+                    <input type="text" class="field" placeholder="Return: 4/14/2023">
+                    <input type="text" class="field" placeholder="Outstanding Fees"><hr>
+                    
+                    <h3 id="Vinfo_lbl">Vehicle Condition</h3>
+
+                    <input type="text" class="field" placeholder="Prev Damages/Issues">
+                    <input type="text" class="field" placeholder="New Damages/Issues">
+                    <input type="text" class="field" placeholder="Condition: A-E">
+            
+                    <button class="btn" id ="btnpymt">See Payment Info</button>
+                    
+                </div>
+    
+            </div>
+        </div>
+
+
+        <script>  
+            document.querySelector('#btnpymt').addEventListener('click', ()=>{
+              document.querySelector("#Payment").style.display = "block";
+              document.querySelector(".left-top-pic").style.display = "none";
+              document.querySelector("#for-pic").style.display = "none";
+            })
+
+            </script>
+
+    </body>
+</html>

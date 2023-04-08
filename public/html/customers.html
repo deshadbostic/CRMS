@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Insert Web Title</title>
+        <meta name="viewpoint" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+       
+        <header>
+            <img class ="logo" src="img/toon1.jpg" alt="">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="#" id="customers">Customers</a></li>
+                    <li><a href="rentals.html">Rentals</a></li>
+                </ul>
+            </nav>
+            <a id="contact" class="cta" href="#"><button>Contact</button></a>
+           </header>
+
+
+        <div class="container" id = "container1">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right" id ="rone">
+                    <h2>Contact Info</h2>
+                    <input type="text" class="field" placeholder="Your Name">
+                    <input type="text" class="field" placeholder="Address">
+                    <input type="text" class="field" placeholder="Phone Number">
+                    <input type="email" class="field" placeholder="Your Email">
+                    <button class="btn" id = "btnone">Next</button>
+                </div>
+                <div class="right" id = "rtwo">
+                    <h2>License Info</h2>
+                    <input type="text" class="field" placeholder="License Number">
+                    <input type="text" class="field" placeholder="Province of Issue">
+                    <input type="text" class="field" placeholder="Expiration Date">
+                    <button class="btn" id = "btntwo">Next</button>
+                </div>
+                <div class="right" id = "rthree">
+                    <h2>Payment Information</h2>
+                    <input type="email" class="field" placeholder="Card Number">
+                    <input type="text" class="field" placeholder="Billing Address">
+                    <input type="text" class="field" placeholder="Expiration Date">
+                    <button class="btn" id = "btnthree">Next</button>
+                </div>
+                <div class="right" id = "rfour">
+                    <h2>Rental Preference</h2>
+                    <input type="email" class="field" placeholder="Preferred Vehicle Type">
+                    <input type="text" class="field" placeholder="Rental Duration">
+                    <input type="text" class="field" placeholder="Pickup/Dropoff Location">
+                    <button class="btn" id ="btnfour">Submit</button>
+        
+                </div>
+                
+            </div>
+        </div>
+
+       
+
+                
+                   
+                    <script>  
+                          document.querySelector('#btnone').addEventListener('click', ()=>{
+                            document.querySelector("#rtwo").style.display = "block";
+                            document.querySelector("#rone").style.display = "none";
+                           
+                          })
+
+                          document.querySelector('#btntwo').addEventListener('click', ()=>{
+                            document.querySelector("#rthree").style.display = "block";
+                            document.querySelector("#rtwo").style.display = "none";
+                           
+                          })
+
+                          document.querySelector('#btnthree').addEventListener('click', ()=>{
+                            document.querySelector("#rfour").style.display = "block";
+                            document.querySelector("#rthree").style.display = "none";
+                           
+                          })
+
+
+
+                          //  var contD = document.getElementsByClassName("container4");
+
+                    
+
+
+                    </script>
+    </body>
+</html>

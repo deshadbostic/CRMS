@@ -24,22 +24,10 @@ const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic",'8pup@G4K#3TBcGU
   dialectModule:require("mysql2")
 });
 
- function operation() {
-  return new Promise(function(resolve, reject) {
-   
-     
-      console.log('Connection has been established successfully.');
-    
-        resolve(p) // successfully fill promise
-      })
-      .catch((err) => {
-        console.error('Unable to connect to the database:', err); // eslint-disable-line no-console
-        reject(err) // reject promise with error
-      });
-  }
+
 var db = {};
 
-sequelize.sync().then(() => {
+sequelize.authenticate().then(() => {
   console.info('INFO - Database connected.')
     // Export db as a module
     db.sequelize = sequelize;

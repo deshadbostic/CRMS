@@ -7,7 +7,7 @@ var sequelize=db.sequelize;
 class Customer extends Sequelize.Model {}
 Customer.init(
   {
-    UserId: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    Cust_ID: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     Username: {type: DataTypes.STRING, primaryKey: false, allowNull: false},
     Fname:DataTypes.STRING,
     Lname:DataTypes.STRING,

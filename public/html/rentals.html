@@ -29,17 +29,17 @@
                             <h3 id="Vinfo_lbl">Payment Info</h3>
                             <input type="text" class="field" placeholder="Amount Charged">
                             <input type="text" class="field" placeholder="Payment Method">
-                            <input type="text" class="field" placeholder="Outstanding Balance">
+                            <input type="text" class="field" placeholder="Outstanding Balance"><hr>
                         </div>
     
                     </div>
                     
                     <div class="left-btm">
                       
-                        <hr><h3 id="Vinfo_lbl">Customer Info</h3>
-                        <input type="text" class="field" placeholder="Glenda Gay">
-                        <input type="text" class="field" placeholder="Jordan Ave. St George">
-                        <input type="email" class="field" placeholder="glenda.gay45@gmail.com">
+                        <h3 id="Vinfo_lbl">Customer Info</h3>
+                        <input type="text" class="field" placeholder="Glenda Gay" readonly>
+                        <input type="text" class="field" placeholder="Jordan Ave. St George" readonly>
+                        <input type="email" class="field" placeholder="glenda.gay45@gmail.com" readonly>
                     </div>
                 </div>
                 <div class="right">
@@ -68,6 +68,7 @@
                     <input type="text" class="field" placeholder="Condition: A-E">
             
                     <button class="btn" id ="btnpymt">See Payment Info</button>
+                    <button class="btn" id ="btnbck">Return</button>
                     
                 </div>
     
@@ -76,12 +77,32 @@
 
 
         <script>  
+        
             document.querySelector('#btnpymt').addEventListener('click', ()=>{
-              document.querySelector("#Payment").style.display = "block";
-              document.querySelector(".left-top-pic").style.display = "none";
-              document.querySelector("#for-pic").style.display = "none";
+                document.querySelector("#btnpymt").style.display = "none";
+                document.querySelector("#btnbck").style.display = "block";
+                document.querySelector("#Payment").style.display = "block";
+                document.querySelector(".left-top-pic").style.display = "none";
+                document.querySelector("#for-pic").style.display = "none";
+            
+              
             })
 
+
+            document.querySelector('#btnbck').addEventListener('click', ()=>{
+                document.querySelector("#btnbck").style.display = "none";
+                document.querySelector("#btnpymt").style.display = "block";
+                document.querySelector("#Payment").style.display = "none";
+              document.querySelector(".left-top-pic").style.display = "block";
+              document.querySelector("#for-pic").style.display = "block";
+
+            })
+
+
+            window.addEventListener("scroll", function(){
+                            var header = document.querySelector("header");
+                            header.classList.toggle("sticky", window.scrollY > 0);
+                        })
             </script>
 
     </body>

@@ -1,15 +1,12 @@
-const router =require('./routers/customers.js');
-test('has routes', () => {
-  const routes = [
-    { path: '/customers', method: 'get' },
-    { path: '/vehicles', method: 'get' },
-    { path: '/rentals', method: 'get' }
-  ]
+const {app} = require("./server");
+const request = require("supertest");
 
-  routes.forEach((route) => {
-    const match = router.stack.find(
-      (s) => s.route.path === route.path && s.route.methods[route.method]
-    );
-    expect(match).toBeTruthy();
-  });
-});
+
+  
+  test("index route works", done => {
+    request(app)
+      .get("/")
+      .expect("Content-Type", /html/)
+      .expect(200, done);
+  }); 
+  

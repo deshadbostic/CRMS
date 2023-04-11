@@ -1,12 +1,13 @@
 
 const DataTypes = require('sequelize/lib/data-types');
 
-var db = require('../index');
+var {db} = require('../server');
 var Sequelize= require('sequelize');
 var sequelize=db.sequelize;
 class Rentals_and_Returns extends Sequelize.Model {}
 Rentals_and_Returns.init(
   {
+    Rental_ID: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     rentalAgreementTerms:DataTypes.STRING,
     rental_Period:DataTypes.STRING,
     rental_Rate: DataTypes.FLOAT,
@@ -21,7 +22,7 @@ Rentals_and_Returns.init(
     paymentMethod:DataTypes.STRING,
     outstandingBal_Cre:DataTypes.FLOAT,
     Cust_ID: {type: DataTypes.INTEGER, foreignKey: true},
-    Veh_Vin: {type: DataTypes.INTEGER, foreignKey: true},
+    Veh_Vin: {type: DataTypes.STRING, foreignKey: true},
   },
   { sequelize: sequelize, modelName: "Rentals_and_Returns", tableName: 'Rentals_and_Returns' }
 );

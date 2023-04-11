@@ -47,8 +47,8 @@ router.get('/', function(req, res) {
 
 }
 });
-router.post('/addcustomer', function (req, res) {
-    const Cust_ID = Math.floor(100000000 + Math.random() * 900000000);;
+router.post('/addrental', function (req, res) {
+    const Rental_ID = Math.floor(100000000 + Math.random() * 900000000);;
      const Name = req.body.name;
      const Age = req.body.Age;
      const Address = req.body.Address;
@@ -76,11 +76,11 @@ router.post('/addcustomer', function (req, res) {
       res.redirect('/')
        return
      } else {
-     console.log(Cust_ID);
-     Cust_ID=parseInt(Cust_ID)
-     Customer=db.Customer;
+     console.log(Rental_ID);
+     Rental_ID=parseInt(Rental_ID)
+     Customer=db.rent;
      let  newStudy =Customer.build({
-         Cust_ID:Cust_ID,
+         Rental_ID:Rental_ID,
          Name:Name,
          Age:Age,
          Address: Address,      
@@ -107,11 +107,11 @@ router.post('/addcustomer', function (req, res) {
   
      }
 });
-router.get('/loadcustomers', function (req, res) {
+router.get('/loadrentals', function (req, res) {
 	
-    Customer=db.Customer;
+    rent=db.rent;
     let studies=[];
-    studies=Customer.findAll()
+    studies=rent.findAll()
           
     studies.then( function(studie) {  
         console.log(studie);

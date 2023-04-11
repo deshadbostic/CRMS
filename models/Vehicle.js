@@ -19,3 +19,6 @@ Vehicle.init(
   },
   { sequelize: sequelize, modelName: "Vehicle", tableName: 'Vehicle' }
 );
+
+db.Vehicle = Vehicle;
+  module.exports = db;

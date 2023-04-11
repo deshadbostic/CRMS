@@ -33,7 +33,13 @@ sequelize.authenticate().then(() => {
     db.sequelize = sequelize;
     db.Sequelize = Sequelize;
         module.exports.db = db;
-        let User= require('./models/customers');
+        let Customer= require('./models/customers');
+        let Vehicle= require('./models/Vehicle');
+        let rent= require('./models/Rentals_and_Returns');
+        db.Customer= Customer.Customer;
+        db.Vehicle= Vehicle.Vehicle;
+        db.rent= rent.rent;
+        module.exports.db = db;
  })
  .catch(err => {
   console.error('ERROR - Unable to connect to the database:', err)
@@ -122,7 +128,7 @@ app.use(expressValidator({
 let users = require('./routers/customers.js');
 
 
-//app.use('/customers',users);
+app.use('/customers',users);
 
 
 app.use(express.static(path.join(__dirname,"public" )));

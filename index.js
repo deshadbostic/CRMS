@@ -144,15 +144,8 @@ app.get('*',(req,res,next)=>{
   res.locals.user = req.user || null; //sends all user data needs breaking down
   next();
 });
-app.get('/',(req,res) =>{ 
-  //req.flash('message','custom message from flash')
-  console.log(req.session);
-  //console.log(req.flash('error')[0]);
-  //console.log(res.locals.user)
-  res.sendFile(__dirname+"/public/html/index.html")
 
-});
-app.get('/customers',(req,res) =>{ 
+app.get('/',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -160,7 +153,15 @@ app.get('/customers',(req,res) =>{
   res.sendFile(__dirname+"/public/html/customers.html")
 
 });
-app.get('/rentals',(req,res) =>{ 
+app.get('/customer',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/customers.html")
+
+});
+app.get('/rental',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -168,7 +169,7 @@ app.get('/rentals',(req,res) =>{
   res.sendFile(__dirname+"/public/html/rentals.html")
 
 });
-app.get('/vehicles',(req,res) =>{ 
+app.get('/vehicle',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);

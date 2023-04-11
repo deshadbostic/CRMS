@@ -83,5 +83,18 @@ router.post('/addcustomer', function (req, res) {
   
      }
 });
-
+router.get('/loadcustomers', function (req, res) {
+	
+    Customer=db.customer;
+    let studies=[];
+    studies=Customer.findAll()
+          
+    studies.then( function(studie) {  
+        console.log(studie);
+        console.log(studie);
+     
+ res.send(studie)
+})
+    
+});
 module.exports =router;

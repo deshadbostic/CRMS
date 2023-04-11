@@ -10,3 +10,21 @@ const request = require("supertest");
       .expect(200, done);
   }); 
   
+  test("customer route works", done => {
+    request(app)
+      .get("/customer")
+      .expect("Content-Type", /html/)
+      .expect(200, done);
+  }); 
+  test("rentals route works", done => {
+    request(app)
+      .get("/rental")
+      .expect("Content-Type", /html/)
+      .expect(200, done);
+  }); 
+  test("vehicle route works", done => {
+    request(app)
+      .get("/vehicle")
+      .expect("Content-Type", /html/)
+      .expect(200, done);
+  }); 

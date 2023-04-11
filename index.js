@@ -21,7 +21,10 @@ const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic",'8pup@G4K#3TBcGU
   host: "sql.freedb.tech",
   port:'3306',
   dialect: "mysql",
-  dialectModule:require("mysql2")
+  dialectModule:require("mysql2"),
+  define: {
+    timestamps: false
+}
 });
 
 
@@ -126,10 +129,12 @@ app.use(expressValidator({
 
 //router files
 let users = require('./routers/customers.js');
-
+let vehicles = require('./routers/vehicles.js');
+let rental = require('./routers/Rentals_and_Returns.js');
 
 app.use('/customers',users);
-
+app.use('/vehicles',vehicles);
+app.use('/rentals',rental);
 
 app.use(express.static(path.join(__dirname,"public" )));
 
@@ -144,15 +149,8 @@ app.get('*',(req,res,next)=>{
   res.locals.user = req.user || null; //sends all user data needs breaking down
   next();
 });
-app.get('/',(req,res) =>{ 
-  //req.flash('message','custom message from flash')
-  console.log(req.session);
-  //console.log(req.flash('error')[0]);
-  //console.log(res.locals.user)
-  res.sendFile(__dirname+"/public/html/index.html")
 
-});
-app.get('/customers',(req,res) =>{ 
+app.get('/',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -160,7 +158,15 @@ app.get('/customers',(req,res) =>{
   res.sendFile(__dirname+"/public/html/customers.html")
 
 });
-app.get('/rentals',(req,res) =>{ 
+app.get('/customer',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/customers.html")
+
+});
+app.get('/rental',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -168,7 +174,7 @@ app.get('/rentals',(req,res) =>{
   res.sendFile(__dirname+"/public/html/rentals.html")
 
 });
-app.get('/vehicles',(req,res) =>{ 
+app.get('/vehicle',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);

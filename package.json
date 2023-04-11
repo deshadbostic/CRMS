@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test default": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index",
     "installer": "npm install",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "start": "node index"
   },
   "repository": {
     "type": "git",

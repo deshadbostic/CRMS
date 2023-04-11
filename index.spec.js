@@ -1,10 +1,9 @@
-import router from 'index';
-
+const router =require('./routers/customers.js');
 test('has routes', () => {
   const routes = [
-    { path: '/customer', method: 'get' },
-    { path: '/vehicle', method: 'get' },
-    { path: '/reset', method: 'get' }
+    { path: '/customers', method: 'get' },
+    { path: '/vehicles', method: 'get' },
+    { path: '/rentals', method: 'get' }
   ]
 
   routes.forEach((route) => {

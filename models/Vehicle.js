@@ -8,7 +8,7 @@ class Vehicle extends Sequelize.Model {}
 Vehicle.init(
   {
     Year:DataTypes.INTEGER,
-    Veh_Vin: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    Veh_Vin: {type: DataTypes.STRING, primaryKey: true, autoIncrement: true},
     Model: DataTypes.STRING,
     Make:DataTypes.STRING,
     Color:DataTypes.STRING,

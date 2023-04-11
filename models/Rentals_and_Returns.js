@@ -22,7 +22,7 @@ Rentals_and_Returns.init(
     paymentMethod:DataTypes.STRING,
     outstandingBal_Cre:DataTypes.FLOAT,
     Cust_ID: {type: DataTypes.INTEGER, foreignKey: true},
-    Veh_Vin: {type: DataTypes.INTEGER, foreignKey: true},
+    Veh_Vin: {type: DataTypes.STRING, foreignKey: true},
   },
   { sequelize: sequelize, modelName: "Rentals_and_Returns", tableName: 'Rentals_and_Returns' }
 );

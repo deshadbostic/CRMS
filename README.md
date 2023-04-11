@@ -1,1 +1,3 @@
 # CRMS
+
+git config test

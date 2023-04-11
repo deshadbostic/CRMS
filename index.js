@@ -152,7 +152,7 @@ app.get('/',(req,res) =>{
   res.sendFile(__dirname+"/public/html/index.html")
 
 });
-app.get('customers',(req,res) =>{ 
+app.get('/customers',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -160,7 +160,7 @@ app.get('customers',(req,res) =>{
   res.sendFile(__dirname+"/public/html/customers.html")
 
 });
-app.get('rentals',(req,res) =>{ 
+app.get('/rentals',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
@@ -168,7 +168,7 @@ app.get('rentals',(req,res) =>{
   res.sendFile(__dirname+"/public/html/rentals.html")
 
 });
-app.get('vehicles',(req,res) =>{ 
+app.get('/vehicles',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);

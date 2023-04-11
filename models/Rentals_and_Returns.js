@@ -7,6 +7,7 @@ var sequelize=db.sequelize;
 class Rentals_and_Returns extends Sequelize.Model {}
 Rentals_and_Returns.init(
   {
+    Rental_ID: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     rentalAgreementTerms:DataTypes.STRING,
     rental_Period:DataTypes.STRING,
     rental_Rate: DataTypes.FLOAT,

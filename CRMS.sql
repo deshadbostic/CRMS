@@ -60,6 +60,7 @@ INSERT INTO `Customer` (`Cust_ID`, `Name`, `Age`, `Address`, `EmailAddress`, `Ph
 --
 
 CREATE TABLE `Rentals_and_Returns` (
+  `Rental_ID` int(11) NOT NULL, 
   `rentalAgreementTerms` varchar(100) NOT NULL,
   `rental_Period` varchar(40) NOT NULL,
   `rental_Rate` float NOT NULL,

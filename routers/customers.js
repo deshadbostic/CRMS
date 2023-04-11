@@ -2,7 +2,7 @@ const express=require('express');
 const path=require('path');
 const router=express.Router();
 const bodyParser = require('body-parser');
-var db = require('../index');
+var {db} = require('../server');
 
 
 const {Sequelize, Model, DataTypes } = require('sequelize')

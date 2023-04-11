@@ -1,7 +1,7 @@
 
 const DataTypes = require('sequelize/lib/data-types');
 
-var db = require('../index');
+var {db} = require('../server');
 var Sequelize= require('sequelize');
 var sequelize=db.sequelize;
 class Customer extends Sequelize.Model {}

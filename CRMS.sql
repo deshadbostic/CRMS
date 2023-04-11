@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2023 at 02:18 AM
+-- Generation Time: Apr 11, 2023 at 03:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `TestT`
+-- Database: `CRMS2`
 --
 
 -- --------------------------------------------------------
@@ -77,6 +77,13 @@ CREATE TABLE `Rentals_and_Returns` (
   `Veh_Vin` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `Rentals_and_Returns`
+--
+
+INSERT INTO `Rentals_and_Returns` (`rentalAgreementTerms`, `rental_Period`, `rental_Rate`, `additional_Fees`, `rental_Date`, `_outstanding_Fees`, `_rental_Status`, `rental__returnDate`, `preDamage_issues`, `newDamage_issues`, `amountCharged`, `paymentMethod`, `outstandingBal_Cre`, `Cust_ID`, `Veh_Vin`) VALUES
+('I agree', '7 days', 100, 50, '2023-04-10', 20, 1, '2023-04-17', 'none', 'none', 170, 'debit', 0, 123456789, '5N1AR1N25AC611339');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +101,13 @@ CREATE TABLE `Vehicle` (
   `Odometer` int(11) NOT NULL,
   `Cust_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Vehicle`
+--
+
+INSERT INTO `Vehicle` (`Year`, `Veh_Vin`, `Model`, `Make`, `Color`, `LPN`, `Availability`, `Odometer`, `Cust_ID`) VALUES
+(2007, '5N1AR1N25AC611339', 'PathfinderXL', 'Nissan', 'Black', 'X4653', 1, 50000, 123456789);
 
 --
 -- Indexes for dumped tables
@@ -127,8 +141,8 @@ ALTER TABLE `Vehicle`
 -- Constraints for table `Rentals_and_Returns`
 --
 ALTER TABLE `Rentals_and_Returns`
-  ADD CONSTRAINT `rentals_and_returns_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `Customer` (`Cust_ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `rentals_and_returns_ibfk_2` FOREIGN KEY (`Veh_Vin`) REFERENCES `Vehicle` (`Veh_Vin`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `rentals_and_returns_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `Customer` (`Cust_ID`),
+  ADD CONSTRAINT `rentals_and_returns_ibfk_2` FOREIGN KEY (`Veh_Vin`) REFERENCES `Vehicle` (`Veh_Vin`);
 
 --
 -- Constraints for table `Vehicle`

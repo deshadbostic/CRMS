@@ -23,5 +23,8 @@ Rentals_and_Returns.init(
     Cust_ID: {type: DataTypes.INTEGER, foreignKey: true},
     Veh_Vin: {type: DataTypes.INTEGER, foreignKey: true},
   },
-  { sequelize: sequelize, modelName: "Rentals and Returns", tableName: 'Rentals_and_Returns' }
+  { sequelize: sequelize, modelName: "Rentals_and_Returns", tableName: 'Rentals_and_Returns' }
 );
+
+db.rent = Rentals_and_Returns;
+  module.exports = db;

@@ -26,3 +26,6 @@ Customer.init(
   },
   { sequelize: sequelize, modelName: "Customer", tableName: 'Customer' }
 );
+
+db.Customer = Customer;
+  module.exports = db;

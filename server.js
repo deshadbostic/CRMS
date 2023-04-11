@@ -184,6 +184,15 @@ app.get('/vehicle',(req,res) =>{
 
 });
 
+app.get('/report',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/reports.html")
+
+});
+
 
 app.use(function(req,res){
     res.status(404).send('Unable to find the requested resource!');

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>KDRRZ Car Rentals</title>
         <link rel = "stylesheet" type = "text/css" href = "bootstrap-4.5.3-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
@@ -26,6 +27,7 @@
                     <div class="left-top">
                         <div class="left-top-pic"></div>
                         <div class="right" id="Payment">
+                            <form action = "/rentals/addrental"  method = "post">
                             <h3 id="Vinfo_lbl">Payment Info</h3>
                             <input type="text" class="field"  name="amnt_chge" placeholder="Amount Charged">
                             <input type="text" class="field"  name="pymt_mthd" placeholder="Payment Method">
@@ -37,41 +39,40 @@
                     <div class="left-btm">
                       
                         <h3 id="Vinfo_lbl">Customer Info</h3>
-                        <input type="text" class="field" name="name" placeholder="Glenda Gay" readonly>
-                        <input type="text" class="field"  name="Address" placeholder="Jordan Ave. St George" readonly>
-                        <input type="email" class="field"  name="EmailAddress" placeholder="glenda.gay45@gmail.com" readonly>
+                        <input type="text" class="field" name="Cus_ID" placeholder="Customer ID">
+                    
                     </div>
                 </div>
                 <div class="right">
                     <h3 id="Vinfo_lbl">Vehicle Info</h3>
-                    <input type="text" class="field"  name="Make" placeholder="Make: Toyota">
-                    <input type="text" class="field"  name="Model" placeholder="Model: Prius">
-                    <input type="text" class="field"  name="License_Plate" placeholder="Plate: A695"><hr>
+                    <input type="text" class="field"  name="vin" placeholder="Vehicle VIN"><hr>
+    
                   
                     <h3 id="Vinfo_lbl">Rental Agreement </h3>
-                    
-                    <input type="text" class="field"  name="rental_date" placeholder="Rental Date">
+                    <input type="text" class="field"  name="rental_terms" placeholder="Rental Agreement Terms">
+                    <input type="text" class="field"  name="rental_period" placeholder="Rental Period">
                     <input type="text" class="field"  name="rental_rate" placeholder="Rental Rate">
                     <input type="text" class="field"  name="add_charge" placeholder="Additional Charges">
                 </div>
 
                 <div class="right">
                     <h3 id="Vinfo_lbl">Rental Status</h3>
-                    <input type="email" class="field"  name="rent_status" placeholder="Currently Rented">
-                    <input type="text" class="field"  name="return_date" placeholder="Return: 4/14/2023">
+                    <input type="text" class="field"  name="rent_status" placeholder="Available/Not Available">
+                    <input type="text" class="field"  name="rental_date" placeholder="Rental Date">
+                    <input type="text" class="field"  name="return_date" placeholder="Return Date">
                     <input type="text" class="field"  name="outstanding_fee" placeholder="Outstanding Fees"><hr>
                     
                     <h3 id="Vinfo_lbl">Vehicle Condition</h3>
 
-                    <input type="text" class="field"  name="prev_dmges" placeholder="Prev Damages/Issues">
-                    <input type="text" class="field"  name="new_dmges" placeholder="New Damages/Issues">
-                    <input type="text" class="field"  name="condition" placeholder="Condition: A-E">
-            
-                    <button class="btn" id ="btnpymt">See Payment Info</button>
-                    <button class="btn" id ="btnbck">Return</button>
+                    <input type="text" class="field"  name="prev_dmges" placeholder="Prev Damages/Issues" required>
+                    <input type="text" class="field"  name="new_dmges" placeholder="New Damages/Issues" required>
                     
+            
+                    <a href="#" class="btn" id = "btnpymt">See Payment Information</a> 
+                    <button class="btn" id ="btnbck">Submit</button>
+               
                 </div>
-    
+            </form>
             </div>
         </div>
 
@@ -89,14 +90,14 @@
             })
 
 
-            document.querySelector('#btnbck').addEventListener('click', ()=>{
+          /*  document.querySelector('#btnbck').addEventListener('click', ()=>{
                 document.querySelector("#btnbck").style.display = "none";
                 document.querySelector("#btnpymt").style.display = "block";
                 document.querySelector("#Payment").style.display = "none";
               document.querySelector(".left-top-pic").style.display = "block";
               document.querySelector("#for-pic").style.display = "block";
 
-            })
+            })*/
 
 
             window.addEventListener("scroll", function(){

@@ -29,20 +29,20 @@ const request = require("supertest");
       .expect("Content-Type", /html/)
       .expect(200, done);
   }); 
-  const Customer = {Name : 'Patricia Holder' , Age :'30' , Address :'Humble fields' , EmailAddress :'patriciah@hotmail.com' , PhoneNumber:'2468258563', DrvLicenseNo : '142534526',StateProvince :'Bridgetown',DrvExpire:'2025-04-02',CreditC_No:'1732874812',BillingAddress:'Lot 167 Humble Fields Christ.Church',CreditC_Exp:'2027-06-03',Pref_Veh_type :'Nissan',Rent_Dur:'7 Days',Rent_Pickup:'Sheraton',Rent_Dropoff:'Coverley'};
+  const Customer = "{Name : 'Jacque Holder' , Age :30 , Address :'Humble fields' , EmailAddress :'patriciah@hotmail.com' , PhoneNumber:2468258563, DrvLicenseNo : 142534526,StateProvince :'Bridgetown',DrvExpire:'2025-04-02',CreditC_No:1732874812,BillingAddress:'Lot 167 Humble Fields Christ.Church',CreditC_Exp:'2027-06-03',Pref_Veh_type :'Nissan',Rent_Dur:'7 Days',Rent_Pickup:'Sheraton',Rent_Dropoff:'Coverley'}";
   test("customer add works",done =>  {
     request(app)
                 .post('customers/addcustomer')
-                .timeout(10000)
                 .send(Customer)
-                .set('Content-Type', 'application/json')
+                .set('Content-type', 'multipart/form-data')
                 .set('Accept', 'application/json')
     .then((response)=>{
+      console.log(response);
        expect(response.statusCode).toBe(200);
        done();
        
     })
-      });
+      },10000);
       const Vehicle = {Year: '2007', Veh_Vin: '5N1AR1N25AC611339' , Model: 'PathfinderXL', Make: 'Nissan', Color:'Black', LPN:'X4653', Availability:'1', Odometer:'50000'}; 
   test("vehicle add works",done =>  {
     request(app)
@@ -63,7 +63,7 @@ const request = require("supertest");
         request(app)
                     .post('rentals/addrental')
                     .timeout(10000)
-                    .send(Vehicle)
+                    .send(RR)
                     .set('Content-Type', 'application/json')
                     .set('Accept', 'application/json')
         .then((response)=>{

@@ -15,7 +15,6 @@ Vehicle.init(
     LPN:DataTypes.STRING,
     Availability:DataTypes.BOOLEAN,
     Odometer:DataTypes.INTEGER,
-    Cust_ID: {type: DataTypes.INTEGER, foreignKey: true},
   },
   { sequelize: sequelize, modelName: "Vehicle", tableName: 'Vehicle' }
 );

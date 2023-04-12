@@ -100,7 +100,6 @@ CREATE TABLE `Vehicle` (
   `LPN` varchar(10) NOT NULL,
   `Availability` tinyint(1) NOT NULL,
   `Odometer` int(11) NOT NULL,
-  `Cust_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -131,8 +130,8 @@ ALTER TABLE `Rentals_and_Returns`
 -- Indexes for table `Vehicle`
 --
 ALTER TABLE `Vehicle`
-  ADD PRIMARY KEY (`Veh_Vin`),
-  ADD KEY `Cust_ID` (`Cust_ID`);
+  ADD PRIMARY KEY (`Veh_Vin`);
+ 
 
 --
 -- Constraints for dumped tables
@@ -145,12 +144,6 @@ ALTER TABLE `Rentals_and_Returns`
   ADD CONSTRAINT `rentals_and_returns_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `Customer` (`Cust_ID`),
   ADD CONSTRAINT `rentals_and_returns_ibfk_2` FOREIGN KEY (`Veh_Vin`) REFERENCES `Vehicle` (`Veh_Vin`);
 
---
--- Constraints for table `Vehicle`
---
-ALTER TABLE `Vehicle`
-  ADD CONSTRAINT `vehicle_ibfk_1` FOREIGN KEY (`Cust_ID`) REFERENCES `Customer` (`Cust_ID`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -65,6 +65,8 @@ router.post('/addcustomer', function (req, res) {
      const Rent_Pickup = req.body.Rent_Pickup;
      const Rent_Dropoff = req.body.Rent_Dropoff;
 
+console.log(PhoneNumber);
+
      //req.checkBody('fname','Name is required').notEmpty();
      req.checkBody('name', 'Name is required').notEmpty();
 

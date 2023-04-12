@@ -27,9 +27,9 @@
                         <div class="left-top-pic"></div>
                         <div class="right" id="Payment">
                             <h3 id="Vinfo_lbl">Payment Info</h3>
-                            <input type="text" class="field" placeholder="Amount Charged">
-                            <input type="text" class="field" placeholder="Payment Method">
-                            <input type="text" class="field" placeholder="Outstanding Balance"><hr>
+                            <input type="text" class="field"  name="amnt_chge" placeholder="Amount Charged">
+                            <input type="text" class="field"  name="pymt_mthd" placeholder="Payment Method">
+                            <input type="text" class="field"  name="outstanding_bal" placeholder="Outstanding Balance"><hr>
                         </div>
     
                     </div>
@@ -37,35 +37,35 @@
                     <div class="left-btm">
                       
                         <h3 id="Vinfo_lbl">Customer Info</h3>
-                        <input type="text" class="field" placeholder="Glenda Gay" readonly>
-                        <input type="text" class="field" placeholder="Jordan Ave. St George" readonly>
-                        <input type="email" class="field" placeholder="glenda.gay45@gmail.com" readonly>
+                        <input type="text" class="field" name="name" placeholder="Glenda Gay" readonly>
+                        <input type="text" class="field"  name="Address" placeholder="Jordan Ave. St George" readonly>
+                        <input type="email" class="field"  name="EmailAddress" placeholder="glenda.gay45@gmail.com" readonly>
                     </div>
                 </div>
                 <div class="right">
                     <h3 id="Vinfo_lbl">Vehicle Info</h3>
-                    <input type="text" class="field" placeholder="Make: Toyota">
-                    <input type="text" class="field" placeholder="Model: Prius">
-                    <input type="text" class="field" placeholder="Plate: A695"><hr>
+                    <input type="text" class="field"  name="Make" placeholder="Make: Toyota">
+                    <input type="text" class="field"  name="Model" placeholder="Model: Prius">
+                    <input type="text" class="field"  name="License_Plate" placeholder="Plate: A695"><hr>
                   
                     <h3 id="Vinfo_lbl">Rental Agreement </h3>
-
-                    <input type="text" class="field" placeholder="Rental Period">
-                    <input type="text" class="field" placeholder="Rental Rate">
-                    <input type="text" class="field" placeholder="Additional Charges">
+                    
+                    <input type="text" class="field"  name="rental_date" placeholder="Rental Date">
+                    <input type="text" class="field"  name="rental_rate" placeholder="Rental Rate">
+                    <input type="text" class="field"  name="add_charge" placeholder="Additional Charges">
                 </div>
 
                 <div class="right">
                     <h3 id="Vinfo_lbl">Rental Status</h3>
-                    <input type="email" class="field" placeholder="Currently Rented">
-                    <input type="text" class="field" placeholder="Return: 4/14/2023">
-                    <input type="text" class="field" placeholder="Outstanding Fees"><hr>
+                    <input type="email" class="field"  name="rent_status" placeholder="Currently Rented">
+                    <input type="text" class="field"  name="return_date" placeholder="Return: 4/14/2023">
+                    <input type="text" class="field"  name="outstanding_fee" placeholder="Outstanding Fees"><hr>
                     
                     <h3 id="Vinfo_lbl">Vehicle Condition</h3>
 
-                    <input type="text" class="field" placeholder="Prev Damages/Issues">
-                    <input type="text" class="field" placeholder="New Damages/Issues">
-                    <input type="text" class="field" placeholder="Condition: A-E">
+                    <input type="text" class="field"  name="prev_dmges" placeholder="Prev Damages/Issues">
+                    <input type="text" class="field"  name="new_dmges" placeholder="New Damages/Issues">
+                    <input type="text" class="field"  name="condition" placeholder="Condition: A-E">
             
                     <button class="btn" id ="btnpymt">See Payment Info</button>
                     <button class="btn" id ="btnbck">Return</button>

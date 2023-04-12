@@ -48,14 +48,14 @@ router.get('/', function(req, res) {
 }
 });
 router.post('/addvehicle', function (req, res) {
-    const Year = Math.floor(100000000 + Math.random() * 900000000);;
-     const Veh_Vin = req.body.name;
-     const Model = req.body.Age;
-     const Make = req.body.Address;
-     const Color = req.body.EmailAddress;
-     const LPN = req.body.PhoneNumber;
-     const Availability = req.body.DrvLicenseNo;
-     const Odometer = req.body.StateProvince;
+     const Year = Math.floor(100000000 + Math.random() * 900000000);;
+     const Veh_Vin = req.body.vin;
+     const Model = req.body.vec_model;
+     const Make = req.body.vec_make;
+     const Color = req.body.vec_color;
+     const LPN = req.body.license_num;
+     const Availability = req.body.availability;
+     const Odometer = req.body.odom_reading;
 
      //req.checkBody('fname','Name is required').notEmpty();
      req.checkBody('Model', 'Name is required').notEmpty();

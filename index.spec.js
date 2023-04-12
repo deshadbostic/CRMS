@@ -62,4 +62,19 @@ const request = require("supertest");
       
            expect(200);
            done();
+<<<<<<< HEAD
           });
+=======
+           
+        })
+          });
+        test("load customers work",done => {
+          request(app)
+          .get('customers/loadcustomers')
+          .expect('Content-Type', /json/)
+          .expect('Content-Length', '15')
+          .expect(200,done)
+
+        });
+    
+>>>>>>> 96843d1d89e2e40bb0089a51c206ffba60274cc2

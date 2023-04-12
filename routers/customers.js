@@ -48,7 +48,7 @@ router.get('/', function(req, res) {
 }
 });
 router.post('/addcustomer', function (req, res) {
-    const Cust_ID = Math.floor(100000000 + Math.random() * 900000000);;
+    var Cust_ID = Math.floor(100000000 + Math.random() * 900000000);;
      const Name = req.body.name;
      const Age = req.body.Age;
      const Address = req.body.Address;
@@ -66,7 +66,7 @@ router.post('/addcustomer', function (req, res) {
      const Rent_Dropoff = req.body.Rent_Dropoff;
 
      //req.checkBody('fname','Name is required').notEmpty();
-     req.checkBody('Name', 'Name is required').notEmpty();
+     req.checkBody('name', 'Name is required').notEmpty();
 
      let errors = req.validationErrors();
    

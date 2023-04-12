@@ -1,3 +1,4 @@
+const { DESCRIBE } = require("sequelize/types/query-types");
 const {app} = require("./server");
 const request = require("supertest");
 
@@ -28,3 +29,4 @@ const request = require("supertest");
       .expect("Content-Type", /html/)
       .expect(200, done);
   }); 
+  

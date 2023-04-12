@@ -49,24 +49,21 @@ router.get('/', function(req, res) {
 });
 router.post('/addrental', function (req, res) {
     const Rental_ID = Math.floor(100000000 + Math.random() * 900000000);;
-     const Name = req.body.name;
-     const Age = req.body.Age;
-     const Address = req.body.Address;
-     const EmailAddress = req.body.EmailAddress;
-     const PhoneNumber = req.body.PhoneNumber;
-     const DrvLicenseNo = req.body.DrvLicenseNo;
-     const StateProvince = req.body.StateProvince;
-     const DrvExpire = req.body.DrvExpire;
-     const CreditC_No = req.body.CreditC_No;
-     const BillingAddress = req.body.BillingAddress;
-     const CreditC_Exp = req.body.CreditC_Exp;
-     const Pref_Veh_type = req.body.Pref_Veh_type;
-     const Rent_Dur = req.body.Rent_Dur;
-     const Rent_Pickup = req.body.Rent_Pickup;
-     const Rent_Dropoff = req.body.Rent_Dropoff;
-
-     //req.checkBody('fname','Name is required').notEmpty();
-     req.checkBody('Name', 'Name is required').notEmpty();
+     const Cust_ID = req.body.name;
+     const outstandingBal_Cre = req.body.Age;
+     const rentalAgreementTerms = req.body.Address;
+     const rental_Period = req.body.EmailAddress;
+     const additional_Fees = req.body.PhoneNumber;
+     const rental_Rate = req.body.DrvLicenseNo;
+     const rental_Date = req.body.StateProvince;
+     const _outstanding_Fees = req.body.DrvExpire;
+     const _rental_Status = req.body.CreditC_No;
+     const rental__returnDate = req.body.BillingAddress;
+     const preDamage_Issues = req.body.CreditC_Exp;
+     const amountCharged = req.body.Pref_Veh_type;
+     const newDamage_Issues = req.body.Rent_Dur;
+     const paymentMethod = req.body.Rent_Pickup;
+     const Veh_Vin = ""; 
 
      let errors = req.validationErrors();
    
@@ -81,21 +78,20 @@ router.post('/addrental', function (req, res) {
      Customer=db.rent;
      let  newStudy =Customer.build({
          Rental_ID:Rental_ID,
-         Name:Name,
-         Age:Age,
-         Address: Address,      
-         EmailAddress: EmailAddress,
-         PhoneNumber: PhoneNumber,  
-         DrvLicenseNo:DrvLicenseNo,  
-         StateProvince: StateProvince,
-         DrvExpire: DrvExpire,    
-         CreditC_No:CreditC_No,    
-         BillingAddress:BillingAddress,
-         CreditC_Exp:CreditC_Exp,   
-         Pref_Veh_type:Pref_Veh_type, 
-         Rent_Dur: Rent_Dur,
-         Rent_Pickup: Rent_Pickup,  
-         Rent_Dropoff:Rent_Dropoff  
+         outstandingBal_Cre:outstandingBal_Cre,
+         rentalAgreementTerms:rentalAgreementTerms,
+         rental_Period: rental_Period,      
+         additional_Fees: additional_Fees,
+         rental_Date: rental_Date,  
+         _outstanding_Fees:_outstanding_Fees,  
+         rental_Rate: rental_Rate,
+         _rental_Status: _rental_Status,    
+         rental__returnDate:rental__returnDate,    
+         preDamage_Issues:preDamage_Issues,
+         amountCharged:amountCharged,   
+         newDamage_Issues: newDamage_Issues,
+         paymentMethod: paymentMethod,  
+         Veh_Vin:Veh_Vin  
      });
     
 

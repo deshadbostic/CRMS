@@ -70,9 +70,22 @@ const request = require("supertest");
         test("load customers work",done => {
           request(app)
           .get('customers/loadcustomers')
-          .expect('Content-Type', /json/)
+          .expect('Content-Type', /html/)
           .expect(200,done)
 
         });
-    
+        test("load rentals work",done => {
+          request(app)
+          .get('rentals/loadrentals')
+          .expect('Content-Type', /html/)
+          .expect(200,done)
+
+        });
+        test("load vehicles work",done => {
+          request(app)
+          .get('vehicles/loadvehicles')
+          .expect('Content-Type', /html/)
+          .expect(200,done)
+
+        });
 

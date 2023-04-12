@@ -25,7 +25,7 @@
                 <div class="right" id ="rone">
                     <form action="#" method="get">
                         <h3>Vehicle Info</h3>
-                        <select name = "make" id = "make">
+                        <select name = "vec_make" id = "make">
                             <option value="Make" disabled>..Vehicle Make..</option>
                             <option value="Nissan">Nissan</option>
                             <option value="Ford">Ford</option>
@@ -34,12 +34,13 @@
                             <option value="Mazda">Mazda</option>
                             <option value="Toyota">Toyota</option>
                         </select>
-                        <input type="text" class="field" placeholder="Vehicle Model" required>
-                        <input type="text" class="field" placeholder="Vehicle Year" required>
-                        <input type="text" class="field" placeholder="VIN" required>
-                        <input type="text" class="field" placeholder="Vehicle Color" required>
-                        <input type="text" class="field" placeholder="License Plate No." required>
-                        <input type="text" class="field" placeholder="Odometer Reading "required>
+                        <input type="text" class="field" name = "vec_model" placeholder="Vehicle Model" required>
+                        <input type="text" class="field" name = "vec_year" placeholder="Vehicle Year" required>
+                        <input type="text" class="field" name = "vin" placeholder="VIN" required>
+                        <input type="text" class="field" name = "vec_color" placeholder="Vehicle Color" required>
+                        <input type="text" class="field" name = "license_num" placeholder="License Plate No." required>
+                        <input type="text" class="field" name = "odom_reading" placeholder="Odometer Reading "required>
+                        <input type="text" class="field" name = "availability" placeholder="Availability"required>
                         <button class="btn" id = "btnone">Submit</button>
                     </form>
                 </div>

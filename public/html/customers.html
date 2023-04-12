@@ -24,12 +24,12 @@
             <div class="contact-box">
                 <div class="left"></div>
                 <div class="right" id ="rone">
-                        <form action = "/customers/addcustomer" id = "CusForm1" method = "get">
+                        <form action = "/customers/addcustomer" id = "CusForm1" method = "post">
                                 <h2>Contact Info</h2>
                                 <input id = "name" type="text" class="field" name="name" placeholder="Your Name" >
                                 <input id = "address" type="text" class="field"  name="Address" placeholder="Address">
-                                <input id = "phone" type="text" class="field" placeholder="Phone Number">
-                                <input id = "email" type="email" class="field" placeholder="Your Email">
+                                <input id = "phone" type="text" class="field" name ="PhoneNumber "placeholder="Phone Number">
+                                <input id = "email" type="email" class="field" name = "EmailAddress"placeholder="Your Email">
                                 <a href="#" class="btn" id = "btn1">Next</a>
                         
                 </div>
@@ -38,9 +38,9 @@
                 <div class="right" id = "rtwo">
                        
                                 <h2>License Info</h2>
-                                <input id = "license#" type="text" class="field" placeholder="License Number">
-                                <input id = "province" type="text" class="field" placeholder="Province of Issue">
-                                <input id = "ExpirationL" type="text" class="field" placeholder="Expiration Date">
+                                <input id = "license#" type="text" class="field" name = "DrvLicenseNo" placeholder="License Number">
+                                <input id = "province" type="text" class="field" name = "StateProvince" placeholder="Province of Issue">
+                                <input id = "ExpirationL" type="text" class="field" name = "DrvExpire" placeholder="Expiration Date">
                                 <a href="#" class="btn" id = "btn2P">Previous</a>
                                 <a href="#" class="btn" id = "btn2">Next</a>
                        
@@ -50,9 +50,9 @@
                 <div class="right" id = "rthree">
                         
                                 <h2>Payment Information</h2>
-                                <input id = "card#" type="text" class="field" placeholder="Card Number">
-                                <input id = "billAdd" type="text" class="field" placeholder="Billing Address">
-                                <input id = "ExpirationP" type="text" class="field" placeholder="Expiration Date">
+                                <input id = "card#" type="text" class="field" name = "CreditC_Exp" placeholder="Card Number">
+                                <input id = "billAdd" type="text" class="field" name = "BillingAddress" placeholder="Billing Address">
+                                <input id = "ExpirationP" type="text" class="field" name = "CreditC_Exp" placeholder="Expiration Date">
                                 <a href="#" class="btn" id = "btn3P">Previous</a>
                                 <a href="#" class="btn" id = "btn3">Next</a>
                        
@@ -62,9 +62,9 @@
                 <div class="right" id = "rfour">
                        
                                 <h2>Rental Preference</h2>
-                                <input id = "" type="text" class="field" placeholder="Preferred Vehicle Type" required>
-                                <input id = "" type="text" class="field" placeholder="Rental Duration"required>
-                                <input id = "" type="text" class="field" placeholder="Pickup/Dropoff Location" required>
+                                <input id = "" type="text" class="field" name = "Pref_Veh_type" placeholder="Preferred Vehicle Type" required>
+                                <input id = "" type="text" class="field" name = "Rent_Dur" placeholder="Rental Duration"required>
+                                <input id = "" type="text" class="field" name = "Rent_Dropoff" placeholder="Pickup/Dropoff Location" required>
                                 <button class="btn" id ="btnfour">Submit</button>
                         </form>
                 </div>

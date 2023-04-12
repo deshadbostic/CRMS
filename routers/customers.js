@@ -77,7 +77,7 @@ router.post('/addcustomer', function (req, res) {
        return
      } else {
      console.log(Cust_ID);
-     Cust_ID=parseInt(Cust_ID)
+     Cust_ID = parseInt(Cust_ID)
      Customer=db.Customer;
      let  newStudy =Customer.build({
          Cust_ID:Cust_ID,

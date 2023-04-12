@@ -48,22 +48,30 @@ router.get('/', function(req, res) {
 }
 });
 router.post('/addrental', function (req, res) {
-    const Rental_ID = Math.floor(100000000 + Math.random() * 900000000);;
-     const Cust_ID = req.body.name;
-     const outstandingBal_Cre = req.body.Age;
-     const rentalAgreementTerms = req.body.Address;
-     const rental_Period = req.body.EmailAddress;
-     const additional_Fees = req.body.PhoneNumber;
-     const rental_Rate = req.body.DrvLicenseNo;
-     const rental_Date = req.body.StateProvince;
-     const _outstanding_Fees = req.body.DrvExpire;
-     const _rental_Status = req.body.CreditC_No;
-     const rental__returnDate = req.body.BillingAddress;
-     const preDamage_Issues = req.body.CreditC_Exp;
-     const amountCharged = req.body.Pref_Veh_type;
-     const newDamage_Issues = req.body.Rent_Dur;
-     const paymentMethod = req.body.Rent_Pickup;
-     const Veh_Vin = ""; 
+    var Rental_ID = Math.floor(100000000 + Math.random() * 900000000);
+    
+    const Cust_ID = req.body.Cus_ID;
+    
+    
+    const Veh_Vin = req.body.vin;
+    
+//Rental Agreement
+    const rentalAgreementTerms = req.body.rental_terms;
+    const rental_Period = req.body.rental_period;
+     const additional_Fees = req.body.add_charge;
+     const rental_Rate = req.body.rental_rate;  
+//Rental Status
+     const _outstanding_Fees = req.body.outstanding_fee;
+     const _rental_Status = req.body.rent_status;
+     const rental__returnDate = req.body.return_date;
+     const rental_Date = req.body.rental_date;
+//Vehicle Condition
+     const preDamage_Issues = req.body.prev_dmges;
+     const newDamage_Issues = req.body.new_dmges;
+//Payment Info
+     const outstandingBal_Cre = req.body.outstanding_bal;
+     const paymentMethod = req.body.pymt_mthd;
+     const amountCharged = req.body.amnt_chge; 
 
      let errors = req.validationErrors();
    
@@ -79,8 +87,9 @@ router.post('/addrental', function (req, res) {
      let  newStudy =Customer.build({
          Rental_ID:Rental_ID,
          outstandingBal_Cre:outstandingBal_Cre,
-         rentalAgreementTerms:rentalAgreementTerms,
-         rental_Period: rental_Period,      
+        rentalAgreementTerms:rentalAgreementTerms,
+        rental_Period:rental_Period,
+        
          additional_Fees: additional_Fees,
          rental_Date: rental_Date,  
          _outstanding_Fees:_outstanding_Fees,  
@@ -90,7 +99,8 @@ router.post('/addrental', function (req, res) {
          preDamage_Issues:preDamage_Issues,
          amountCharged:amountCharged,   
          newDamage_Issues: newDamage_Issues,
-         paymentMethod: paymentMethod,  
+         paymentMethod: paymentMethod,
+        
          Veh_Vin:Veh_Vin  
      });
     

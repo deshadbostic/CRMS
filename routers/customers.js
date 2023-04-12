@@ -62,7 +62,7 @@ router.post('/addcustomer', function (req, res) {
      const CreditC_Exp = req.body.CreditC_Exp;
      const Pref_Veh_type = req.body.Pref_Veh_type;
      const Rent_Dur = req.body.Rent_Dur;
-     const Rent_Pickup = req.body.Rent_Pickup;
+     const Rent_Pickup = req.body.Rent_Dropoff;
      const Rent_Dropoff = req.body.Rent_Dropoff;
 
 console.log(PhoneNumber);

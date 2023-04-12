@@ -445,6 +445,6 @@ h2:after{
 #Payment{
    padding-bottom: 2px;
     display: none;
-    
+    background-color: #2ecc71;
     animation: transitionIn 1.5s;
 }

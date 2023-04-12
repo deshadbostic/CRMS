@@ -48,7 +48,7 @@ router.get('/', function(req, res) {
 }
 });
 router.post('/addvehicle', function (req, res) {
-     const Year = Math.floor(100000000 + Math.random() * 900000000);;
+     var Year = Math.floor(100000000 + Math.random() * 900000000);;
      const Veh_Vin = req.body.vin;
      const Model = req.body.vec_model;
      const Make = req.body.vec_make;
@@ -58,7 +58,7 @@ router.post('/addvehicle', function (req, res) {
      const Odometer = req.body.odom_reading;
 
      //req.checkBody('fname','Name is required').notEmpty();
-     req.checkBody('Model', 'Name is required').notEmpty();
+     req.checkBody('vec_model', 'Model is required').notEmpty();
 
      let errors = req.validationErrors();
    

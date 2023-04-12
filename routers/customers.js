@@ -65,6 +65,8 @@ router.post('/addcustomer', function (req, res) {
      const Rent_Pickup = req.body.Rent_Pickup;
      const Rent_Dropoff = req.body.Rent_Dropoff;
 
+console.log(PhoneNumber);
+
      //req.checkBody('fname','Name is required').notEmpty();
      req.checkBody('name', 'Name is required').notEmpty();
 
@@ -77,7 +79,7 @@ router.post('/addcustomer', function (req, res) {
        return
      } else {
      console.log(Cust_ID);
-     Cust_ID=parseInt(Cust_ID)
+     Cust_ID = parseInt(Cust_ID)
      Customer=db.Customer;
      let  newStudy =Customer.build({
          Cust_ID:Cust_ID,

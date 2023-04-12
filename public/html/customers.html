@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Insert Web Title</title>
+        <title>KDRRZ Car Rentals</title>
         <meta name="viewpoint" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
@@ -27,9 +27,9 @@
                         <form action = "/customers/addcustomer" id = "CusForm1" method = "post">
                                 <h2>Contact Info</h2>
                                 <input id = "name" type="text" class="field" name="name" placeholder="Full Name" >
-                                <input id = "name" type="text" class="field" name="Age" placeholder="Age" >
+                                <input id = "name" type="number" class="field" name="Age" placeholder="Age" >
                                 <input id = "address" type="text" class="field"  name="Address" placeholder="Address">
-                                <input id = "phone" type="text" class="field" name ="PhoneNumber "placeholder="Phone Number">
+                                <input id = "phone" type="" class="field" name ="PhoneNumber"placeholder="Phone Number">
                                 <input id = "email" type="email" class="field" name = "EmailAddress"placeholder="Email Address">
                                 <a href="#" class="btn" id = "btn1">Next</a>
                         
@@ -40,9 +40,9 @@
                        
                                 <h2>License Info</h2>
 
-                                <input id = "license#" type="text" class="field" name = "DrvLicenseNo" placeholder="Drivers License No.">
+                                <input id = "license#" type="number" class="field" name = "DrvLicenseNo" placeholder="Drivers License No.">
                                 <input id = "province" type="text" class="field" name = "StateProvince" placeholder="Province of Issue">
-                                <input id = "ExpirationL" type="text" class="field" name = "DrvExpire" placeholder="License Expiration Date">
+                                <input id = "ExpirationL" type="date" class="field" name = "DrvExpire" placeholder="License Expiration Date">
                                 <a href="#" class="btn" id = "btn2P">Previous</a>
                                 <a href="#" class="btn" id = "btn2">Next</a>
                        
@@ -52,9 +52,9 @@
                 <div class="right" id = "rthree">
                         
                                 <h2>Payment Information</h2>
-                                <input id = "card#" type="text" class="field" name = "CreditC_Exp" placeholder="Credit Card No.">
+                                <input id = "card#" type="number" class="field" name = "CreditC_Exp" placeholder="Credit Card No.">
                                 <input id = "billAdd" type="text" class="field" name = "BillingAddress" placeholder="Billing Address">
-                                <input id = "ExpirationP" type="text" class="field" name = "CreditC_Exp" placeholder="Card Expiration Date">
+                                <input id = "ExpirationP" type="date" class="field" name = "CreditC_Exp" placeholder="Card Expiration Date">
                                 <a href="#" class="btn" id = "btn3P">Previous</a>
                                 <a href="#" class="btn" id = "btn3">Next</a>
                        

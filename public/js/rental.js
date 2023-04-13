@@ -10,32 +10,52 @@
     }).responseText);
 }
 async function implementrentalVehRen(){
-    var loadrent = await loadrentals()
-    let select = document.getElementById("Veh_Ren_His"); 
+    var loadrent = await loadrentals();
+    
+    var rr = document.getElementByIdclass("rfield"); 
     select.innerHTML="";
      console.log( loadrent[0]);
+     let x= 0;
     for(let i = 0; i <  loadrent.length; i++) {
-        rr[i].textContent = loadrent[i].Cus_ID;
-        rr[i].textContent = loadrent[i].rental_Date;
-        rr[i].textContent = loadrent[i].rental_Rate;
-        rr[i].textContent = loadrent[i].additional_Fees;
+        rr[i++].value = loadrent[x].Cus_ID;
+        rr[i].value = loadrent[x].rental_Date;
+        rr[i].value = loadrent[x].rental_Rate;
+        rr[i].value = loadrent[x].additional_Fees;
        
     }
       }
 
       let implementrentalCusRen= async ()=>{
         var loadrent = await loadrentals();
+           var loadcustomer = await loadcustomers();
+           var loadvehicle = await loadvehicles();
+           //finds the correct customer based on a customer id that is sent to this file
+           for(let x = 0; x <  loadcustomer.length; x++) {
+            if(loadcustomer[x].Cus_ID==customer){
+             var customerrecord=loadcustomer[x].Cus_ID; //saves the customer record that is the one we want
+              break;
+            }
+           }
+          
        var rr = document.getElementsByClassName("field");
        console.log(loadrent);
        let x = 0;
         for(let i = 0; i <  loadrent.length; i++) {
-        rr[i++].value = loadrent[x].rental_Date;
-        rr[i].value = loadrent[x].Veh_Vin;
-        rr[i].value = loadrent[x].rental_Rate;
-        rr[i].value = loadrent[x].additional_Fees;
-        
-        x++;
-            
+          if(loadrent[x].Cus_ID==customerrecord.Cus_ID){ //only uses records made by customer
+            rr[i++].value = loadrent[x].rental_Date;
+            for(let p = 0; p <  loadvehicle.length; p++) {
+              if(loadvehicle[p].Veh_Vin==loadrent[x].Veh_Vin){
+                rr[i++].value = loadvehicle[x].model;
+                break;
+              }
+             }
+            rr[i++].value = loadrent[x].rental_Rate;
+            rr[i].value = loadrent[x].additional_Fees;
+          
+          x++;
+
+          }
+  
         }
           }
 

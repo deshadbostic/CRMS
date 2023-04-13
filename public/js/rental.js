@@ -88,3 +88,4 @@ function implementrentalVehRen(){
                             select.appendChild(el);
                         }
                           }
+                         module.exports = { loadrentals};

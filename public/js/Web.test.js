@@ -1,7 +1,7 @@
 
-require("./customer.js");
-require("./vehicle.js");
-require("./rental.js");
+const { loadcustomers} = require("./customer.js");
+const { loadrentals } = require("./vehicle.js");
+const { loadvehicles} = require("./rental.js");
 
 let var0 = loadcustomers();
 expect(var0).toBe

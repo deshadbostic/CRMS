@@ -95,3 +95,4 @@ function loadvehicles(){
                                 select.appendChild(el);
                             }
                               }
+                              module.exports = { loadvehicles};

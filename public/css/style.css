@@ -462,6 +462,13 @@ h2:after{
 
 #VIN{
     width:70%;
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgba(228, 226, 226, 0.842);
+    font-size:1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
 }
 
 .vfield{

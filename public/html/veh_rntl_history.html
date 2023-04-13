@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
 
-    <body onload="implementvehicleVehRen()">
+    <body onload="implementrentalVehRen(), implementvehicleVehRen()">
 
 
         <header>
@@ -30,12 +30,13 @@
 
                 <div class="right" id ="rone">
                                 <h2>Report</h2>
-                                <input id = "veh_sum" type="text" class="" name="veh_sum" placeholder="Vehicle VIN">
-                                
-                                <input id = "rental_status" type="text" class="rfield" name="rent_stat" placeholder="Rental Date" readonly>
-
-                                <input id = "customer" type="text" class="field" name="customer" placeholder="Customer" readonly>
-                                <input id = "Rnt_rte" type="text" class="rfield" name="rental_Rte" placeholder="Rental Rates" readonly>
+                                <label for ="VIN">Vehicle VIN:</label>
+                                <input id = "VIN" type="text" class="VIN" name="veh_sum" placeholder="Vehicle VIN"><br>
+                                <label for ="rental_status">Rental Date:</label>
+                                <input id = "rental_status" type="text" class="rfield" name="rent_stat" placeholder="Rental Date" readonly><br>
+                                <label for ="Rnt_rte">Rate:</label>
+                                <input id = "Rnt_rte" type="text" class="rfield" name="rental_Rte" placeholder="Rental Rates" readonly><br>
+                                <label for ="add_chrge">Add. Fee:</label>
                                 <input id = "add_chrge" type="text" class="rfield" name="add_chrge" placeholder="Additional Charges" readonly>
                                 
                 </div>

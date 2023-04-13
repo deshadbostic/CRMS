@@ -51,7 +51,7 @@ var email = document.querySelector("#email");
           function implementcustomers(){
             var loadcus = loadcustomers();
             
-            let select = document.getElementById("Veh_Ren_His"); 
+            let select = document.getElementById("Cus_Ren_His"); 
             select.innerHTML="";
              console.log( loadcus[0]);
             for(let i = 0; i <  loadcus.length; i++) {
@@ -63,7 +63,7 @@ var email = document.querySelector("#email");
             }
               }
 
-
+/*
               function implementcustomers(){
                 var loadcus = loadcustomers();
                 
@@ -140,4 +140,4 @@ var email = document.querySelector("#email");
                                     el.value =i;
                                     select.appendChild(el);
                                 }
-                                  }
+                                  }*/

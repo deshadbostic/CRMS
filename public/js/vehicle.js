@@ -12,7 +12,7 @@ function loadvehicles(){
     });
 }
 
-      function implementvehicle(){
+      function implementvehicleVehRen(){
         var vehiclefunc = loadvehicles();
         let select = document.getElementById("Veh_Ren_His"); 
         select.innerHTML="";
@@ -26,7 +26,7 @@ function loadvehicles(){
         }
           }
 
-          function implementvehicle(){
+          function implementvehicleCusRen(){
             var vehiclefunc = loadvehicles();
             let select = document.getElementById("Cus_Ren_His"); 
             select.innerHTML="";
@@ -40,7 +40,7 @@ function loadvehicles(){
             }
               }
 
-              function implementvehicle(){
+              function implementvehicleRenHis(){
                 var vehiclefunc = loadvehicles();
                 let select = document.getElementById("Ren_His_Rpt"); 
                 select.innerHTML="";
@@ -54,7 +54,7 @@ function loadvehicles(){
                 }
                   }
 
-                  function implementvehicle(){
+                  function implementvehicleVehAva(){
                     var vehiclefunc = loadvehicles();
                     let select = document.getElementById("Veh_Ava_Rpt"); 
                     select.innerHTML="";
@@ -68,7 +68,7 @@ function loadvehicles(){
                     }
                       }
 
-                      function implementvehicle(){
+                      function implementvehicleLteRtn(){
                         var vehiclefunc = loadvehicles();
                         let select = document.getElementById("Lte_Rtn_Rpt"); 
                         select.innerHTML="";
@@ -82,7 +82,7 @@ function loadvehicles(){
                         }
                           }
 
-                          function implementvehicle(){
+                          function implementvehicleVehTrnvr(){
                             var vehiclefunc = loadvehicles();
                             let select = document.getElementById("Veh_Trnvr_Rpt"); 
                             select.innerHTML="";

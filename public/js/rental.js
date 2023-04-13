@@ -20,7 +20,7 @@ console.log(loadvehicle);
      for(let p = 0; p <  loadvehicle.length; p++) 
      {
       if(loadvehicle[p].Veh_Vin==customer){
-        var customerrecord =loadvehicle[p].Veh_Vin;
+        var customerrecord =loadvehicle[p]
         break;
       }
 
@@ -30,17 +30,20 @@ console.log(loadvehicle);
     
  var rr = document.getElementsByClassName("rfield");
  console.log(loadrent);
+ var vin = document.getElementById("VIN");
+ vin.value=customerrecord.Veh_Vin;
  let x = 0;
   for(let i = 0; i <  loadrent.length; i++) {
-    console.log(loadrent[x].Veh_Vin)
+    console.log(customerrecord.Veh_Vin)
     if(loadrent[x].Veh_Vin==customerrecord.Veh_Vin){ //only uses records made by customer
-      rr[i++].value = loadrent[x].rental_Date;
       for(let p = 0; p <  loadcustomer.length; p++) {
         if(loadcustomer[p].Cust_ID==loadrent[x].Cust_ID){
           rr[i++].value = loadcustomer[p].Name;
           break;
-        }
-       }
+        } }
+      rr[i++].value = loadrent[x].rental_Date;
+     
+      
       rr[i++].value = loadrent[x].rental_Rate;
       rr[i].value = loadrent[x].additional_Fees;
     

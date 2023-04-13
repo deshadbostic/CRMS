@@ -15,14 +15,9 @@
  
           function implementcustomers(){
             var loadcus = loadcustomers();
-            
-            let select = document.getElementById("Cus_Ren_His"); 
-            select.innerHTML="";
-             console.log( loadcus[0]);
+            var rr = document.getElementsByClassName("field");
             for(let i = 0; i <  loadcus.length; i++) {
-                let opt =  loadcus[i].name;
-                let el = document.createElement("option");
-                el.textContent = opt;
+              rr[i].textContent = 
                 el.value =i;
                 select.appendChild(el);
             }

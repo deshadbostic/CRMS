@@ -63,13 +63,15 @@ async function implementrentalVehRen(){
               }
 
 //veh_avl_report
-              function implementrentalVehAvl(){
-                var loadrent = loadrentals()
-                var rr = document.getElementsByClassName("field");
+              let implementrentalVehAvl= async() =>{
+                var loadrent = await loadrentals();
+                var rr = document.getElementsByClassName("rfield");
+                console.log(loadrent);
+                let x=0;
                 for(let i = 0; i <  loadrent.length; i++) {
-                    rr[i].textContent = loadrent[i]._rental_Status;
-                    rr[i].textContent = loadrent[i].Veh_Vin;
-
+                    rr[i++].value = loadrent[x]._rental_Status;
+                    rr[i].value = loadrent[x].Veh_Vin;
+                    x++;
                 }
             }
                

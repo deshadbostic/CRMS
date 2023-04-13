@@ -10,7 +10,8 @@
     }).responseText);
 }
 async function implementrentalVehRen(){
-    var loadrent = await loadrentals()
+    var loadrent = await loadrentals();
+    var loadcust =await loadcustomers();
     let select = document.getElementById("Veh_Ren_His"); 
     select.innerHTML="";
      console.log( loadrent[0]);
@@ -29,10 +30,10 @@ async function implementrentalVehRen(){
        console.log(loadrent);
        let x = 0;
         for(let i = 0; i <  loadrent.length; i++) {
-        rr[i++].value = loadrent[x].rental_Date;
-        rr[i].value = loadrent[x].Veh_Vin;
-        rr[i].value = loadrent[x].rental_Rate;
-        rr[i].value = loadrent[x].additional_Fees;
+          rr[i++].value = loadrent[x].rental_Date;
+          rr[i++].value = loadrent[x].Cus_ID;
+          rr[i++].value = loadrent[x].rental_Rate;
+          rr[i].value = loadrent[x].additional_Fees;
         
         x++;
             

@@ -1,24 +1,22 @@
 //const { loadvehicles } = require("./vehicle.js");
 
 
-      let loadcustomers=()=>{
-        $.ajax({
+      function loadcustomers(){
+        return JSON.parse($.ajax({
             url:"/customers/loadcustomers",
             type:"GET",
+            async:false,
             contentType:"application/json; charset=utf-8",
             dataType:"json",
-            success: function(response){
-            console.log(response);
-            return response;
-    }
-        });
+        }).responseText);
     }
  
-          function implementcustomers(){
+          let implementcustomers = async () =>{
             var loadcus = loadcustomers();
             var rr = document.getElementsByClassName("field");
+          var x= 0;
             for(let i = 0; i <  loadcus.length; i++) {
-              rr[i].textContent = 
+              rr[i].value = 
                 el.value =i;
                 select.appendChild(el);
             }

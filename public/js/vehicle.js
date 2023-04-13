@@ -65,8 +65,8 @@ function loadvehicles(){
                     }
                       }
 
-                      function implementvehicleLteRtn(){
-                        var vehiclefunc = loadvehicles();
+                      async function implementvehicleLteRtn(){
+                        var vehiclefunc = await loadvehicles();
                         let select = document.getElementById("Lte_Rtn_Rpt"); 
                         select.innerHTML="";
                          console.log( vehiclefunc[0]);
@@ -79,8 +79,8 @@ function loadvehicles(){
                         }
                           }
 
-                          function implementvehicleVehTrnvr(){
-                            var vehiclefunc = loadvehicles();
+                          async function implementvehicleVehTrnvr(){
+                            var vehiclefunc = await loadvehicles();
                             let select = document.getElementById("Veh_Trnvr_Rpt"); 
                             select.innerHTML="";
                              console.log( vehiclefunc[0]);

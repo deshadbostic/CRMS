@@ -44,6 +44,7 @@ async function implementrentalVehRen(){
 
       let implementrentalCusRen= async ()=>{
         var loadrent = await loadrentals();
+        let customer = localStorage.getItem("customer")
            var loadcustomer = await loadcustomers();
            var loadvehicle = await loadvehicles();
            //finds the correct customer based on a customer id that is sent to this file

@@ -1,3 +1,4 @@
+//const { loadvehicles } = require("./vehicle.js");
 
 
       let loadcustomers=()=>{
@@ -102,4 +103,4 @@
                                 }
                                   }*/
 
-                                 // module.exports = { loadcustomers};
+                                 exports = { loadcustomers};

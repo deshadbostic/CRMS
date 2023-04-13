@@ -27,10 +27,16 @@ const sequelize = new Sequelize("freedb_CRMSDB","freedb_Bostic",'8pup@G4K#3TBcGU
 }
 });
 
-
+let callback = null
 var db={ }
 exports.db = db;
 exports.app = app;
+exports.callWhenComplete=  callWhenComplete=()=>{
+  if (callback) callback('hack complete')
+}
+exports.callbackPromise= callbackPromise=()=> new Promise((resolve)=> {
+  callback = resolve
+})
 sequelize.authenticate().then(() => {
   console.info('INFO - Database connected.')
     // Export db as a module

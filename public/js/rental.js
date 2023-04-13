@@ -46,7 +46,9 @@ async function implementrentalVehRen(){
         var loadrent = await loadrentals();
         let customer = localStorage.getItem("customer")
            var loadcustomer = await loadcustomers();
+           console.log(customer);
            var loadvehicle = await loadvehicles();
+
            //finds the correct customer based on a customer id that is sent to this file
            for(let x = 0; x <  loadcustomer.length; x++) {
             if(loadcustomer[x].Cus_ID==customer){
@@ -54,6 +56,7 @@ async function implementrentalVehRen(){
               break;
             }
            }
+           console.log(customerrecord);
           
        var rr = document.getElementsByClassName("field");
        console.log(loadrent);

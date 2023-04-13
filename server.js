@@ -257,15 +257,34 @@ app.post('/veh_select',(req,res) =>{
 
   
 });
-app.post('/cus_select',(req,res) =>{ 
+app.get('/veh_select',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  
+  
+  res.sendFile(__dirname+"/public/html/veh_select.html")
+
+  
+});
+app.post('/cus_selectp',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
   //console.log(res.locals.user)
   const cus = req.body.cus_select;
 
-  res.sendFile(__dirname+"/public/html/cus_select.html")
+  res.sendFile(__dirname+"/public/html/cus_rntl_history.html")
+});
+app.get('/cus_select',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  
 
+  res.sendFile(__dirname+"/public/html/cus_select.html")
   
 });
 app.use(function(req,res){

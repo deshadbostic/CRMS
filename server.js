@@ -246,14 +246,14 @@ app.get('/veh_trn_report',(req,res) =>{
   res.sendFile(__dirname+"/public/html/veh_trnovr_report.html")
 
 });
-app.post('/veh_select',(req,res) =>{ 
+app.post('/veh_selectp',(req,res) =>{ 
   //req.flash('message','custom message from flash')
   console.log(req.session);
   //console.log(req.flash('error')[0]);
   //console.log(res.locals.user)
   const veh = req.body.veh_select;
   
-  res.sendFile(__dirname+"/public/html/veh_select.html")
+  res.sendFile(__dirname+"/public/html/veh_rntl_history.html")
 
   
 });

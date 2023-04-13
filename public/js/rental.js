@@ -41,7 +41,20 @@ function implementrentalVehRen(){
 
           function implementrentalRenHis(){
             var loadrent = loadrentals()
+           var rr = document.getElementsByClassName("field");
+           var total_num ;
+           var total_bal;
+           for(let i = 0; i <  loadrent.length; i++) {
+             rr[i].textContent =  loadrent[i].rental_Period;
+             rr[i].textContent =  loadrent[i].rental_Rate;
+            total_num++;
+            total_bal += loadrent[i].amountCharged;
             
+            let el = document.createElement("option");
+            el.textContent = opt;
+            el.value =i;
+            select.appendChild(el);
+        }
               }
 
 

@@ -448,3 +448,58 @@ h2:after{
     background-color: #2ecc71;
     animation: transitionIn 1.5s;
 }
+
+.rfield{
+    width:50%;
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgba(228, 226, 226, 0.842);
+    font-size:1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.vfield{
+    width:50%;
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgba(228, 226, 226, 0.842);
+    font-size:1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.rptfield{
+    width:50%;
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgba(228, 226, 226, 200);
+    font-size:1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.report{
+    width:50%;
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgba(228, 226, 226, 200);
+    font-size:1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+
+.field:hover{
+    background-color: rgba(0,0,0,0.1);
+
+}
+.field:focus{
+    background-color:#fff;
+    border: 2px solid rgba(30, 85, 250, 0.47);
+
+}

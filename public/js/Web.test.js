@@ -1,7 +1,7 @@
-require("supertest");
-require("customers.js");
-require("vehicles.js");
-require("Rentals_and_Returns.js");
+
+require("./customer.js");
+require("./vehicle.js");
+require("./rental.js");
 
 let var0 = loadcustomers();
 expect(var0).toBe

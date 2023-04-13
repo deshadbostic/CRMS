@@ -11,12 +11,12 @@ function loadvehicles(){
 
  let implementvehicleVehRen= async() =>{
   var vehiclefunc = await loadvehicles();
- 
-  var rr= document.getElementsByClassName("vfield");
+  var loadcust =await loadcustomers();
+  var rr= document.getElementsByClassName("rfield");
   console.log(vehiclefunc);
   let x = 0; 
   for(let i = 0; i <  vehiclefunc.length; i++) {
-     rr[i++].value = vehiclefunc[x].Make;
+   
      rr[i].value = vehiclefunc[x].Model;
   x++;
   }

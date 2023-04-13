@@ -11,15 +11,16 @@
 }
 async function implementrentalVehRen(){
     var loadrent = await loadrentals();
-    var loadcust =await loadcustomers();
-    let select = document.getElementById("Veh_Ren_His"); 
+    
+    var rr = document.getElementByIdclass("rfield"); 
     select.innerHTML="";
      console.log( loadrent[0]);
+     let x= 0;
     for(let i = 0; i <  loadrent.length; i++) {
-        rr[i].textContent = loadrent[i].Cus_ID;
-        rr[i].textContent = loadrent[i].rental_Date;
-        rr[i].textContent = loadrent[i].rental_Rate;
-        rr[i].textContent = loadrent[i].additional_Fees;
+        rr[i++].value = loadrent[x].Cus_ID;
+        rr[i].value = loadrent[x].rental_Date;
+        rr[i].value = loadrent[x].rental_Rate;
+        rr[i].value = loadrent[x].additional_Fees;
        
     }
       }

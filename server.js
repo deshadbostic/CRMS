@@ -252,6 +252,7 @@ app.post('/veh_select',(req,res) =>{
   //console.log(req.flash('error')[0]);
   //console.log(res.locals.user)
   const veh = req.body.veh_select;
+  
   res.sendFile(__dirname+"/public/html/veh_select.html")
 
   
@@ -262,6 +263,7 @@ app.post('/cus_select',(req,res) =>{
   //console.log(req.flash('error')[0]);
   //console.log(res.locals.user)
   const cus = req.body.cus_select;
+
   res.sendFile(__dirname+"/public/html/cus_select.html")
 
   

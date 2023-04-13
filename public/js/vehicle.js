@@ -54,7 +54,7 @@ function loadvehicles(){
                 }
                   }
 
-                  function implementvehicleVehAva(){
+                  function implementvehicleVehAvl(){
                     var vehiclefunc = loadvehicles();
                     let select = document.getElementById("Veh_Ava_Rpt"); 
                     select.innerHTML="";
@@ -95,4 +95,4 @@ function loadvehicles(){
                                 select.appendChild(el);
                             }
                               }
-                              module.exports = { loadvehicles};
+                             

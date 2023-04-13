@@ -40,16 +40,17 @@ function implementrentalVehRen(){
 
 
           function implementrentalRenHis(){
-            var loadrent = loadrentals()
+            var loadrent = Array.from(loadrentals());
            var rr = document.getElementsByClassName("field");
            var total_num ;
            var total_bal;
+           console.log(loadrent);
            for(let i = 0; i <  loadrent.length; i++) {
              rr[i].textContent =  loadrent[i].rental_Period;
              rr[i].textContent =  loadrent[i].rental_Rate;
             total_num++;
             total_bal += loadrent[i].amountCharged;
-            
+
             let el = document.createElement("option");
             el.textContent = opt;
             el.value =i;
@@ -58,9 +59,10 @@ function implementrentalVehRen(){
               }
 
 
-              function implementrentalVehAva(){
+              function implementrentalVehAvl(){
                 var loadrent = loadrentals()
-                let select = document.getElementById("Veh_Ava_Rpt"); 
+                let select = document.getElementById("Veh_Ava_Rpt");
+                 
                 select.innerHTML="";
                  console.log( loadrent[0]);
                 for(let i = 0; i <  loadrent.length; i++) {
@@ -101,4 +103,4 @@ function implementrentalVehRen(){
                             select.appendChild(el);
                         }
                           }
-                         module.exports = { loadrentals};
+                        

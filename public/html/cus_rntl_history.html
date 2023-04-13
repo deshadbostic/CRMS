@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
 
-    <body onclick="implementcustomers()">
+    <body onload="implementcustomers()">
 
 
         <header>
@@ -24,6 +24,21 @@
            </header>
 
 
+           <div class="container" id = "container1">
+            <div class="contact-box">
+                <div class="left"></div>
+
+                <div class="right" id ="rone">
+                                <h2>Report</h2>
+
+                                <input id = "rental_status" type="text" class="rental" name="rent_stat" placeholder="Rental Date" readonly>
+                                <input id = "Rnt_avail" type="text" class="revenue" name="rent_avail" placeholder="Vehicle Rented" readonly>
+                                <input id = "Rnt_reserve" type="text" class="field" name="reserve" placeholder="Rental Rates" readonly>
+                                <input id = "add_fees" type="text" class="field" name="add_fees" placeholder="Additional Fees" readonly>
+                </div>
+            </div>
+           </div>
+           <script src="/jquery.js"></script>
            <script src="../js/customer.js"></script>
            <script src="../js/rental.js"></script>
            <script src="../js/vehicle.js"></script>

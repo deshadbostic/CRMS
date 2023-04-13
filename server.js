@@ -198,6 +198,54 @@ app.get('/report',(req,res) =>{
   res.sendFile(__dirname+"/public/html/reports.html")
 
 });
+app.get('/veh_rental',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/veh_rntl_history.html")
+
+});
+app.get('/cus_rental',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/cus_rntl_history.html")
+
+});
+app.get('/rental_report',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/ren_his_report.html")
+
+});
+app.get('/veh_report',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/veh_avl_report.html")
+
+});
+app.get('/late_report',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/lte_rtn_report.html")
+
+});
+app.get('/veh_trn_report',(req,res) =>{ 
+  //req.flash('message','custom message from flash')
+  console.log(req.session);
+  //console.log(req.flash('error')[0]);
+  //console.log(res.locals.user)
+  res.sendFile(__dirname+"/public/html/veh_trnovr_report.html")
+
+});
 
 
 app.use(function(req,res){

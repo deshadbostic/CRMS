@@ -62,10 +62,10 @@ router.post('/addcustomer', function (req, res) {
      const CreditC_Exp = req.body.CreditC_Exp;
      const Pref_Veh_type = req.body.Pref_Veh_type;
      const Rent_Dur = req.body.Rent_Dur;
-     const Rent_Pickup = req.body.Rent_Dropoff;
+     const Rent_Pickup = req.body.Rent_Pickup;
      const Rent_Dropoff = req.body.Rent_Dropoff;
 
-console.log(PhoneNumber);
+console.log(CreditC_Exp);
 
      //req.checkBody('fname','Name is required').notEmpty();
      req.checkBody('name', 'Name is required').notEmpty();
@@ -90,10 +90,10 @@ console.log(PhoneNumber);
          PhoneNumber: PhoneNumber,  
          DrvLicenseNo:DrvLicenseNo,  
          StateProvince: StateProvince,
-         DrvExpire: DrvExpire,    
+         DrvExpire:new Date(DrvExpire),    
          CreditC_No:CreditC_No,    
          BillingAddress:BillingAddress,
-         CreditC_Exp:CreditC_Exp,   
+         CreditC_Exp:new Date(CreditC_Exp),   
          Pref_Veh_type:Pref_Veh_type, 
          Rent_Dur: Rent_Dur,
          Rent_Pickup: Rent_Pickup,  

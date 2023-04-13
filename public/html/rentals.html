@@ -29,9 +29,9 @@
                         <div class="right" id="Payment">
                             <form action = "/rentals/addrental"  method = "post">
                             <h3 id="Vinfo_lbl">Payment Info</h3>
-                            <input type="text" class="field"  name="amnt_chge" placeholder="Amount Charged">
-                            <input type="text" class="field"  name="pymt_mthd" placeholder="Payment Method">
-                            <input type="text" class="field"  name="outstanding_bal" placeholder="Outstanding Balance"><hr>
+                            <input type="text" class="field"  name="amnt_chge" placeholder="Amount Charged"required>
+                            <input type="text" class="field"  name="pymt_mthd" placeholder="Payment Method"required>
+                            <input type="text" class="field"  name="outstanding_bal" placeholder="Outstanding Balance"required><hr>
                         </div>
     
                     </div>
@@ -39,28 +39,32 @@
                     <div class="left-btm">
                       
                         <h3 id="Vinfo_lbl">Customer Info</h3>
-                        <input type="text" class="field" name="Cus_ID" placeholder="Customer ID">
+                        <input type="text" class="field" name="Cus_ID" placeholder="Customer ID"required>
                     
                     </div>
                 </div>
                 <div class="right">
                     <h3 id="Vinfo_lbl">Vehicle Info</h3>
-                    <input type="text" class="field"  name="vin" placeholder="Vehicle VIN"><hr>
+                    <input type="text" class="field"  name="VIN" placeholder="Vehicle VIN"required><hr>
     
                   
                     <h3 id="Vinfo_lbl">Rental Agreement </h3>
-                    <input type="text" class="field"  name="rental_terms" placeholder="Rental Agreement Terms">
-                    <input type="text" class="field"  name="rental_period" placeholder="Rental Period">
-                    <input type="text" class="field"  name="rental_rate" placeholder="Rental Rate">
-                    <input type="text" class="field"  name="add_charge" placeholder="Additional Charges">
+                    <input type="text" class="field"  name="rental_terms" placeholder="Rental Agreement Terms" required>
+                    <input type="text" class="field"  name="rental_period" placeholder="Rental Period"required>
+                    <input type="text" class="field"  name="rental_rate" placeholder="Rental Rate:eg.150.00"required>
+                    <input type="text" class="field"  name="add_charge" placeholder="Additional Charges"required>
                 </div>
 
                 <div class="right">
                     <h3 id="Vinfo_lbl">Rental Status</h3>
-                    <input type="text" class="field"  name="rent_status" placeholder="Available/Not Available">
-                    <input type="text" class="field"  name="rental_date" placeholder="Rental Date">
-                    <input type="text" class="field"  name="return_date" placeholder="Return Date">
-                    <input type="text" class="field"  name="outstanding_fee" placeholder="Outstanding Fees"><hr>
+                    <select name = "rent_status" id = "make" required>
+                        <option value="none"  id = "hdn" selected disabled hidden >Availability</option>
+                        <option value="1">1-Yes</option>
+                        <option value="0">0-No</option>
+                        </select>
+                    <input type="text" class="field"  name="rental_date" placeholder="Rental Date: mm/dd/yyyy" required>
+                    <input type="text" class="field"  name="return_date" placeholder="Return Date: mm/dd/yyyy" required>
+                    <input type="text" class="field"  name="outstanding_fee" placeholder="Outstanding Fees" required><hr>
                     
                     <h3 id="Vinfo_lbl">Vehicle Condition</h3>
 

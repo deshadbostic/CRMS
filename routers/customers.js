@@ -2,7 +2,7 @@ const express=require('express');
 const path=require('path');
 const router=express.Router();
 const bodyParser = require('body-parser');
-var {db} = require('../server');
+var {db,callWhenComplete} = require('../server');
 
 
 const {Sequelize, Model, DataTypes } = require('sequelize')
@@ -118,9 +118,9 @@ router.get('/loadcustomers', function (req, res) {
     studies.then( function(studie) {  
         console.log(studie);
         console.log(studie);
-     
- res.send(studie)
+    res.status(200) 
+ res.send(JSON.stringify(studie))
 })
-    
+callWhenComplete()
 });
 module.exports =router;

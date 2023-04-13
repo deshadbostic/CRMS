@@ -1,9 +1,30 @@
 
-const {app} = require("./server");
+const {app,callbackPromise} = require("./server");
 const request = require("supertest");
 
 
-  
+test("load customers work",async() => {
+  const result = await callbackPromise()
+  await request(app)
+  .get('/customers/loadcustomers')
+  .expect('Content-Type', /json/)
+  // .expect(response => {console.log(response)})
+  .expect(200)
+},20000);
+test("load rentals work",done => {
+  request(app)
+  .get('/rentals/loadrentals')
+  .expect('Content-Type', /json/)
+  .expect(200,done)
+
+});
+test("load vehicles work",done => {
+  request(app)
+  .get('/vehicles/loadvehicles')
+  .expect('Content-Type', /json/)
+  .expect(200,done)
+
+});
   test("index route works", done => {
     request(app)
       .get("/")
@@ -32,7 +53,7 @@ const request = require("supertest");
   const Customer = "{Name : 'Jacque Test' , Age :30 , Address :'Humble fields' , EmailAddress :'patriciah@hotmail.com' , PhoneNumber:2468258563, DrvLicenseNo : 142534526,StateProvince :'Bridgetown',DrvExpire:'2025-04-02',CreditC_No:1732874812,BillingAddress:'Lot 167 Humble Fields Christ.Church',CreditC_Exp:'2027-06-03',Pref_Veh_type :'Nissan',Rent_Dur:'7 Days',Rent_Pickup:'Sheraton',Rent_Dropoff:'Coverley'}";
   test("customer add works",done =>  {
     request(app)
-                .post('customers/addcustomer')
+                .post('/customers/addcustomer')
                 .send(Customer)
                 .set('Content-type', 'multipart/form-data')
                 .set('Accept', 'application/json')
@@ -43,7 +64,7 @@ const request = require("supertest");
       const Vehicle = {Year: '2007', Model: 'PathfinderXL', Make: 'toyota', Color:'Black', LPN:'X4653', Availability:'1', Odometer:'50000'}; 
   test("vehicle add works",done =>  {
     request(app)
-                .post('vehicles/addvehicle')
+                .post('/vehicles/addvehicle')
                 .send(Vehicle)
                 .set('Content-type', 'multipart/form-data')
                 .set('Accept', 'application/json')
@@ -55,7 +76,7 @@ const request = require("supertest");
      
       test("Rental add works",done =>  {
         request(app)
-                    .post('rentals/addrental')
+                    .post('/rentals/addrental')
                     .send(RR)
                     .set('Content-type', 'multipart/form-data')
                     .set('Accept', 'application/json')
@@ -67,25 +88,5 @@ const request = require("supertest");
 
            
         
-        test("load customers work",done => {
-          request(app)
-          .get('customers/loadcustomers')
-          .expect('Content-Type', /html/)
-          .expect(200,done)
-
-        });
-        test("load rentals work",done => {
-          request(app)
-          .get('rentals/loadrentals')
-          .expect('Content-Type', /html/)
-          .expect(200,done)
-
-        });
-        test("load vehicles work",done => {
-          request(app)
-          .get('vehicles/loadvehicles')
-          .expect('Content-Type', /html/)
-          .expect(200,done)
-
-        });
+  
 

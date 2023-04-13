@@ -1,27 +1,68 @@
+
 function loadvehicles(){
-   return JSON.parse($.ajax({
+    $.ajax({
         url:"/vehicles/loadvehicles",
         type:"GET",
-        async:false,
         contentType:"application/json; charset=utf-8",
         dataType:"json",
-   }).responseText);
+        success: function(response){
+             console.log(response);
+       return response;
+}
+    });
+}
 
-  }
+      function implementvehicleVehRen(){
+        var vehiclefunc = loadvehicles();
+        let select = document.getElementById("Veh_Ren_His"); 
+        select.innerHTML="";
+         console.log( vehiclefunc[0]);
+        for(let i = 0; i <  vehiclefunc.length; i++) {
+            let opt =  vehiclefunc[i].name;
+            let el = document.createElement("option");
+            el.textContent = opt;
+            el.value =i;
+            select.appendChild(el);
+        }
+          }
+
+          function implementvehicleCusRen(){
+            var vehiclefunc = loadvehicles();
+            let select = document.getElementById("Cus_Ren_His"); 
+            select.innerHTML="";
+             console.log( vehiclefunc[0]);
+            for(let i = 0; i <  vehiclefunc.length; i++) {
+                let opt =  vehiclefunc[i].name;
+                let el = document.createElement("option");
+                el.textContent = opt;
+                el.value =i;
+                select.appendChild(el);
+            }
+              }
+
+              function implementvehicleRenHis(){
+                var vehiclefunc = loadvehicles();
+                let select = document.getElementById("Ren_His_Rpt"); 
+                select.innerHTML="";
+                 console.log( vehiclefunc[0]);
+                for(let i = 0; i <  vehiclefunc.length; i++) {
+                    let opt =  vehiclefunc[i].name;
+                    let el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value =i;
+                    select.appendChild(el);
+                }
+                  }
                   
 //veh_avl_report
-                  let implementvehicleVehAvl= async() =>{
-                    var vehiclefunc = await loadvehicles();
-                    var rr= document.getElementsByClassName("vfield");
-                    console.log(vehiclefunc);
-                    let x = 0; 
+                  function implementvehicleVehAvl(){
+                    var vehiclefunc = loadvehicles();
+                    var rr= document.getElementsByClassName("vfield"); 
                     for(let i = 0; i <  vehiclefunc.length; i++) {
-                       rr[i++].value = vehiclefunc[x].Make;
-                       rr[i].value = vehiclefunc[x].Model;
-                    x++;
+                       rr[i].textContent = vehiclefunc[i].Make;
+                       rr[i].textContent = vehiclefunc[i].Model;
+                    
                     }
                       }
-
-                      
 
                  

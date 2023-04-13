@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
 
-    <body onload="implementcustomers()">
+    <body onload="implementcustomers(), implementrentalCusRen()">
 
 
         <header>
@@ -31,8 +31,8 @@
                 <div class="right" id ="rone">
                                 <h2>Report</h2>
 
-                                <input id = "rental_status" type="text" class="rental" name="rent_stat" placeholder="Rental Date" readonly>
-                                <input id = "Rnt_avail" type="text" class="revenue" name="rent_avail" placeholder="Vehicle Rented" readonly>
+                                <input id = "rental_status" type="text" class="field" name="rent_stat" placeholder="Rental Date" readonly>
+                                <input id = "Rnt_avail" type="text" class="field" name="rent_avail" placeholder="Vehicle Rented" readonly>
                                 <input id = "Rnt_reserve" type="text" class="field" name="reserve" placeholder="Rental Rates" readonly>
                                 <input id = "add_fees" type="text" class="field" name="add_fees" placeholder="Additional Fees" readonly>
                 </div>

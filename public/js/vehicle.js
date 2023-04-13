@@ -53,18 +53,15 @@ function loadvehicles(){
                     select.appendChild(el);
                 }
                   }
-
+                  
+//veh_avl_report
                   function implementvehicleVehAvl(){
                     var vehiclefunc = loadvehicles();
-                    let select = document.getElementById("Veh_Ava_Rpt"); 
-                    select.innerHTML="";
-                     console.log( vehiclefunc[0]);
+                    var rr= document.getElementsByClassName("vfield"); 
                     for(let i = 0; i <  vehiclefunc.length; i++) {
-                        let opt =  vehiclefunc[i].name;
-                        let el = document.createElement("option");
-                        el.textContent = opt;
-                        el.value =i;
-                        select.appendChild(el);
+                       rr[i].textContent = vehiclefunc[i].Make;
+                       rr[i].textContent = vehiclefunc[i].Model;
+                    
                     }
                       }
 

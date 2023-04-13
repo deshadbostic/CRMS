@@ -1,3 +1,5 @@
+//const { loadcustomers} = require("./customer.js");
+
  function loadrentals(){
      return JSON.parse($.ajax({
         url:"/rentals/loadrentals",
@@ -93,4 +95,6 @@ let x=0;
                             select.appendChild(el);
                         }
                           }
+                     
+                          exports = { loadrentals};
                         

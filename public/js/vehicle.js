@@ -1,4 +1,4 @@
-
+//const { loadrentals} = require("./rental.js");
 function loadvehicles(){
     $.ajax({
         url:"/vehicles/loadvehicles",
@@ -92,4 +92,4 @@ function loadvehicles(){
                                 select.appendChild(el);
                             }
                               }
-                             
+                              exports = { loadvehicles};

@@ -53,7 +53,7 @@ router.post('/addrental', function (req, res) {
     const Cust_ID = req.body.Cus_ID;
     
     
-    const Veh_Vin = req.body.vin;
+    const Veh_Vin = req.body.VIN;
     
 //Rental Agreement
     const rentalAgreementTerms = req.body.rental_terms;

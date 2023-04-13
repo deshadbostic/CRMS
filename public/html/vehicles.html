@@ -26,7 +26,7 @@
                     <form action="/vehicles/addvehicle" method="post">
                         <h3>Vehicle Info</h3>
                         <select name = "vec_make" id = "make">
-                            <option value="Make" disabled>..Vehicle Make..</option>
+                            <option value="none"  id = "hdn" selected disabled hidden>Vehicle Make</option>
                             <option value="Nissan">Nissan</option>
                             <option value="Ford">Ford</option>
                             <option value="BMW">BMW</option>
@@ -39,8 +39,12 @@
                         <input type="text" class="field" name = "vin" placeholder="VIN" required>
                         <input type="text" class="field" name = "vec_color" placeholder="Vehicle Color" required>
                         <input type="text" class="field" name = "license_num" placeholder="License Plate No." required>
-                        <input type="text" class="field" name = "odom_reading" placeholder="Odometer Reading "required>
-                        <input type="text" class="field" name = "availability" placeholder="Availability"required>
+                        <input type="number" class="field" name = "odom_reading" placeholder="Odometer Reading "required>
+                        <select name = "availability" id = "make">
+                            <option value="none"  id = "hdn" selected disabled hidden>Availability</option>
+                            <option value="1">1</option>
+                            <option value="0">0</option>
+                            </select>
                         <button class="btn" id = "btnone">Submit</button>
                     </form>
                 </div>

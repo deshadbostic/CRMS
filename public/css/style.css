@@ -450,7 +450,7 @@ h2:after{
 }
 
 .rfield{
-    width:50%;
+    width:70%;
     padding: 0.5rem 1rem;
     outline:none;
     border: 2px solid rgba(0,0,0,0);
@@ -460,8 +460,12 @@ h2:after{
     transition: .3s;
 }
 
+#VIN{
+    width:70%;
+}
+
 .vfield{
-    width:50%;
+    width:70%;
     padding: 0.5rem 1rem;
     outline:none;
     border: 2px solid rgba(0,0,0,0);

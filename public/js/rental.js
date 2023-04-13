@@ -21,14 +21,18 @@ async function implementrentalVehRen(){
     }
       }
 
-      function implementrentalCusRen(){
-        var loadrent = loadrentals();
+      let implementrentalCusRen= async ()=>{
+        var loadrent = await loadrentals();
        var rr = document.getElementsByClassName("field");
+       console.log(loadrent);
+       let x = 0;
         for(let i = 0; i <  loadrent.length; i++) {
-        rr[i].textContent = loadrent[i].rental_Date;
-        rr[i].textContent = loadrent[i].rental_Rate;
-        rr[i].textContent = loadrent[i].additional_Fees;
-        rr[i].textContent = loadrent[i].Veh_Vin;
+        rr[i++].value = loadrent[x].rental_Date;
+        rr[i].value = loadrent[x].Veh_Vin;
+        rr[i].value = loadrent[x].rental_Rate;
+        rr[i].value = loadrent[x].additional_Fees;
+        
+        x++;
             
         }
           }

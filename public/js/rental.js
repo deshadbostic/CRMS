@@ -36,23 +36,30 @@ async function implementrentalVehRen(){
 
             let implementrentalRenHis= async ()=>{
             var loadrent =  await loadrentals();       
-              var rr = document.getElementsByClassName("field");
+              var rr = document.getElementsByClassName("rptfield");
+              var total= document.getElementById("no_of_rec")
+              var totalBal = document.getElementById("t_revenue")
               var total_num=0 ;
               var total_bal =0;
               console.log(loadrent);
-let x=0;
+              let x=0;
               for(let i = 0; i <  loadrent.length; i++) {
                 rr[i++].value =  loadrent[x].rental_Period;
                 rr[i].value =  loadrent[x].rental_Rate;
                total_num++;
                total_bal += loadrent[x].amountCharged;
                 x++;
-        
+               
                //select.appendChild(el);
            }
+          
+           
 
            //set total text box 
             //set number of
+            total.value =total_num;
+            totalBal.value = total_bal;
+
               }
 
 //veh_avl_report

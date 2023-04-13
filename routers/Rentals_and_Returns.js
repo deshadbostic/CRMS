@@ -85,6 +85,7 @@ router.post('/addrental', function (req, res) {
      Rental_ID=parseInt(Rental_ID)
      Customer=db.rent;
      let  newStudy =Customer.build({
+        Cust_ID:Cust_ID,
          Rental_ID:Rental_ID,
          outstandingBal_Cre:outstandingBal_Cre,
         rentalAgreementTerms:rentalAgreementTerms,

@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
 
-    <body onclick="implementrentalLteRtn(), implementvehicleLteRtn()">
+    <body onload="implementrentalLteRtn(), implementvehicleLteRtn()">
         
 
 
@@ -25,6 +25,22 @@
            </header>
 
            
+           <div class="container" id = "container1">
+            <div class="contact-box">
+                <div class="left"></div>
+
+                <div class="right" id ="rone">
+                                <h2>Report</h2>
+
+                                <input  type="text" class="rental" name="no_lte_rtn" placeholder="No. Late Returns" readonly>
+                                <input type="text" class="revenue" name="lte_duration" placeholder="Late Duration" readonly>
+                                <input  type="text" class="field" name="lte_fees" placeholder="Late Fees" readonly>
+                                
+                </div>
+            </div>
+           </div>
+
+           <script src="/jquery.js"></script>
            <script src="../js/customer.js"></script>
            <script src="../js/rental.js"></script>
            <script src="../js/vehicle.js"></script>

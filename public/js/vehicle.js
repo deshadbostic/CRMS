@@ -10,6 +10,7 @@ function loadvehicles(){
  }
 
  let implementvehicleVehRen= async() =>{
+  let vehicles = localStorage.getItem("vehicle")
   var vehiclefunc = await loadvehicles();
   var rr= document.getElementsByClassName("VIN");
   console.log(vehiclefunc);

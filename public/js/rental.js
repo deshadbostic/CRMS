@@ -10,49 +10,66 @@
     }).responseText);
 }
 async function implementrentalVehRen(){
-    var loadrent = await loadrentals();
-    var loadcustomer = await loadcustomers();
-    var loadvehicle = await loadvehicles();
+  var loadrent = await loadrentals();
+  let customer = localStorage.getItem("vehicle")
+     var loadcustomer = await loadcustomers();
+     console.log(customer);
+     var loadvehicle = await loadvehicles();
+console.log(loadvehicle);
 
-    for(let x = 0; x <  loadcustomer.length; x++) {
-      if(loadcustomer[x].Cus_ID==customer){
-       var customerrecord=loadcustomer[x].Cus_ID; //saves the customer record that is the one we want
+     for(let p = 0; p <  loadvehicle.length; p++) 
+     {
+      if(loadvehicle[p].Veh_Vin==customer){
+        var customerrecord =loadvehicle[p]
         break;
       }
-     }
 
-    var rr = document.getElementsByClassName("rfield"); 
-     console.log( loadrent);
-     let x= 0;
-    for(let i = 0; i <  loadrent.length; i++) {
-      if(loadrent[x].Cus_ID==customerrecord.Cus_ID){ //only uses records made by customer
+    }
 
-        rr[i++].value = loadrent[x].rental_Date;
-        for(let p = 0; p <  loadvehicle.length; p++) {
-          if(loadvehicle[p].Veh_Vin==loadrent[x].Veh_Vin){
-            rr[i++].value = loadvehicle[x].model;
-            break;
-          }
-         }
-        rr[i++].value = loadrent[x].rental_Date;
-        rr[i++].value = loadrent[x].rental_Rate;
-        rr[i].value = loadrent[x].additional_Fees;
-       x++;
+     console.log(customerrecord);
+    
+ var rr = document.getElementsByClassName("rfield");
+ console.log(loadrent);
+ var vin = document.getElementById("VIN");
+ vin.value=customerrecord.Veh_Vin;
+ let x = 0;
+  for(let i = 0; i <  loadrent.length; i++) {
+    console.log(customerrecord.Veh_Vin)
+    if(loadrent[x].Veh_Vin==customerrecord.Veh_Vin){ //only uses records made by customer
+      for(let p = 0; p <  loadcustomer.length; p++) {
+        if(loadcustomer[p].Cust_ID==loadrent[x].Cust_ID){
+          rr[i++].value = loadcustomer[p].Name;
+          break;
+        } }
+      rr[i++].value = loadrent[x].rental_Date;
+     
+      
+      rr[i++].value = loadrent[x].rental_Rate;
+      rr[i].value = loadrent[x].additional_Fees;
+    
+    x++;
+
     }
-      }
+
+  }
     }
+  
 
       let implementrentalCusRen= async ()=>{
         var loadrent = await loadrentals();
+        let customer = localStorage.getItem("customer")
            var loadcustomer = await loadcustomers();
+           console.log(customer);
            var loadvehicle = await loadvehicles();
+
            //finds the correct customer based on a customer id that is sent to this file
            for(let x = 0; x <  loadcustomer.length; x++) {
-            if(loadcustomer[x].Cus_ID==customer){
-             var customerrecord=loadcustomer[x].Cus_ID; //saves the customer record that is the one we want
+            if(loadcustomer[x].Cust_ID==customer){
+             var customerrecord=loadcustomer[x].Cust_ID; //saves the customer record that is the one we want
               break;
             }
            }
+           console.log(customerrecord);
           
        var rr = document.getElementsByClassName("field");
        console.log(loadrent);
@@ -61,8 +78,10 @@ async function implementrentalVehRen(){
           if(loadrent[x].Cus_ID==customerrecord.Cus_ID){ //only uses records made by customer
             rr[i++].value = loadrent[x].rental_Date;
             for(let p = 0; p <  loadvehicle.length; p++) {
+              console.log(loadvehicle[p].Veh_Vin);
+              console.log(loadrent[x].Veh_Vin)
               if(loadvehicle[p].Veh_Vin==loadrent[x].Veh_Vin){
-                rr[i++].value = loadvehicle[x].model;
+                rr[i++].value = loadvehicle[p].Model;
                 break;
               }
              }

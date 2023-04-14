@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <form>
+        <form action="/cus_selectp" method="post">
             
 
             <select name="cus_select" id="cusSelect">
-            <button type="button">Click Me!</button>
+           <option value="123456789">
+            Patricia
+           </option>
 
             </select>
-        </form>
+            <button >Click Me!</button>
+        </form> 
     </head>
-
+    <body>
+    <script>    
+        var rr= document.getElementById("cusSelect");
+        localStorage.setItem("customer", rr.value);
+     </script>
+    </body>
 </html>

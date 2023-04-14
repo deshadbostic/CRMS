@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <form>
+        <form action="/veh_selectp" method="post">
             
 
-            <select name="veh_select" id="safeid">
-            <button type="button">Click Me!</button>
+            <select name="veh_select" id="vehSelect">
+           <option value="5N1AR1N25AC611339">
+            Patricia
+           </option>
 
             </select>
-        </form>
+            <button >Click Me!</button>
+        </form> 
     </head>
-
+    <body>
+    <script>    
+        var rr= document.getElementById("vehSelect");
+        localStorage.setItem("vehicle", rr.value);
+     </script>
+    </body>
 </html>

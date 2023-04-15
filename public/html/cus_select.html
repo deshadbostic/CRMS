@@ -4,15 +4,16 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css">      
     </head>
-    <body>
+    <body onload="implementsearch_customer()">
     
         <div class="searchcontainer">
            
                     <form action="/cus_selectp" method="post" class="search-bar">
                         <select name="cus_select" id="cusSelect">
-                            <option id = "option"value="123456789"><p id = "option">Patricia</p></option>
+                            <option class = "option" id = "option"value="123456789"></option>
+                            
                          </select>
-                            <button class="searchbtn" >Click Me!</button>
+                            <button class="searchbtn" >Select</button>
             </form> 
 
             
@@ -20,9 +21,11 @@
 
 
 
-    <script>    
+    <script  src="../js/customer.js"></script> 
+     <script>
         var rr= document.getElementById("cusSelect");
         localStorage.setItem("customer", rr.value);
      </script>
+     <script src="/jquery.js"></script>
     </body>
 </html>

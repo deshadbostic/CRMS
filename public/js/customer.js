@@ -10,16 +10,30 @@
             dataType:"json",
         }).responseText);
     }
- 
+ /*
           let implementcustomers = async () =>{
             var loadcus = loadcustomers();
             var rr = document.getElementsByClassName("field");
           var x= 0;
             for(let i = 0; i <  loadcus.length; i++) {
-              rr[i].value = 
+              rr[i].value = ;
                 el.value =i;
                 select.appendChild(el);
             }
+              }*/
+
+              let implementsearch_customer = async()=>{
+                var loadcus =await loadcustomers();
+                var rr = document.getElementById("cusSelect");
+                var x = 0;
+                for(let i = 0; i < loadcus.length; i++){
+                    var option= document.createElement("option");
+                    option.value= loadcus[x].Cust_ID;
+                    option.text= loadcus[x].Name;
+                    rr.appendChild(option)
+                  x++;
+                  
+                }
               }
 
 /*

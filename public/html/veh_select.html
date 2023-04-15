@@ -7,7 +7,7 @@
 
 
         <div class="searchcontainer">
-        <form action="/veh_selectp" method="post"  class="search-bar">
+        <form action="/veh_selectp" method="post"  class="search-bar"  onsubmit="setvalue()">
                             <select name="veh_select" id="vehSelect">
                         <option value="5N1AR1N25AC611339">                         
                         </option>
@@ -18,8 +18,10 @@
         </div>
   
     <script>    
-        var rr= document.getElementById("vehSelect");
+           function setvalue(){
+             var rr= document.getElementById("vehSelect");
         localStorage.setItem("vehicle", rr.value);
+        }
      </script>
 
      <script src="../js/vehicle.js"></script>

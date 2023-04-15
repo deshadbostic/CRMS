@@ -8,7 +8,7 @@
     
         <div class="searchcontainer">
            
-                    <form action="/cus_selectp" method="post" class="search-bar">
+                    <form action="/cus_selectp" method="post" class="search-bar" onsubmit="setvalue()">
                         <select name="cus_select" id="cusSelect">
                             <option class = "option" id = "option"value="123456789"></option>
                             
@@ -23,8 +23,11 @@
 
     <script  src="../js/customer.js"></script> 
      <script>
-        var rr= document.getElementById("cusSelect");
+        function setvalue(){
+             var rr= document.getElementById("cusSelect");
         localStorage.setItem("customer", rr.value);
+        }
+       
      </script>
      <script src="/jquery.js"></script>
     </body>

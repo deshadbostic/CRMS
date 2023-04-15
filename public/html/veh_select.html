@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <form action="/veh_selectp" method="post">
-            
-
-            <select name="veh_select" id="vehSelect">
-           <option value="5N1AR1N25AC611339">
-            Patricia
-           </option>
-
-            </select>
-            <button >Click Me!</button>
-        </form> 
+        <link rel="stylesheet" type="text/css" href="/css/style.css">      
     </head>
-    <body>
+    <body onload="implementsearch_vehicle()">
+
+
+        <div class="searchcontainer">
+        <form action="/veh_selectp" method="post"  class="search-bar"  onsubmit="setvalue()">
+                            <select name="veh_select" id="vehSelect">
+                        <option value="5N1AR1N25AC611339" aria-placeholder="Vehicle Make">                         
+                        </option>
+
+                            </select>
+                            <button  class="searchbtn" >Select</button>
+        </form> 
+        </div>
+  
     <script>    
-        var rr= document.getElementById("vehSelect");
+           function setvalue(){
+             var rr= document.getElementById("vehSelect");
         localStorage.setItem("vehicle", rr.value);
+        }
      </script>
+
+     <script src="../js/vehicle.js"></script>
+     <script src="/jquery.js"></script>
     </body>
 </html>

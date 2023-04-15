@@ -25,17 +25,24 @@ console.log(loadvehicle);
       }
 
     }
-
+//customerrecord is rlly vehicle record just named bad
      console.log(customerrecord);
-    
+     var elem = document.getElementById('replicable');
  var rr = document.getElementsByClassName("rfield");
+
  console.log(loadrent);
  var vin = document.getElementById("VIN");
  vin.value=customerrecord.Veh_Vin;
  let x = 0;
   for(let i = 0; i <  loadrent.length; i++) {
     console.log(customerrecord.Veh_Vin)
-    if(loadrent[x].Veh_Vin==customerrecord.Veh_Vin){ //only uses records made by customer
+    if(loadrent[x].Veh_Vin==customerrecord.Veh_Vin){ //only uses records made by vehicle
+      if(i<0){
+        let clone = elem.cloneNode(true);
+      clone.id = `elem${i}`;
+      document.getElementById('rone').appendChild(clone);
+      }
+      rr = document.getElementsByClassName("rfield")
       for(let p = 0; p <  loadcustomer.length; p++) {
         if(loadcustomer[p].Cust_ID==loadrent[x].Cust_ID){
           rr[i++].value = loadcustomer[p].Name;
@@ -61,7 +68,7 @@ console.log(loadvehicle);
            var loadcustomer = await loadcustomers();
            console.log(customer);
            var loadvehicle = await loadvehicles();
-
+           var elem = document.getElementById('replicable');
            //finds the correct customer based on a customer id that is sent to this file
            for(let x = 0; x <  loadcustomer.length; x++) {
             if(loadcustomer[x].Cust_ID==customer){
@@ -75,6 +82,12 @@ console.log(loadvehicle);
        console.log(loadrent);
        let x = 0;
         for(let i = 0; i <  loadrent.length; i++) {
+          if(i<0){
+            let clone = elem.cloneNode(true);
+          clone.id = `elem${i}`;
+          document.getElementById('rone').appendChild(clone);
+          }
+          rr = document.getElementsByClassName("field")
           if(loadrent[x].Cus_ID==customerrecord.Cus_ID){ //only uses records made by customer
             rr[i++].value = loadrent[x].rental_Date;
             for(let p = 0; p <  loadvehicle.length; p++) {

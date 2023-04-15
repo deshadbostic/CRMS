@@ -35,3 +35,18 @@ function loadvehicles(){
                    x++;
                    }
                      }
+
+                     let implementsearch_vehicle = async()=>{
+                      var loadveh =await loadvehicles();
+                      var rr = document.getElementById("vehSelect");
+                      var x = 0;
+                      for(let i = 0; i < loadveh.length; i++){
+                          var option= document.createElement("option");
+                          option.value = loadveh[x].Veh_Vin;
+                         // option.text= loadveh[x].Model;
+                          option.text= loadveh[x].Make +" "+loadveh[x].Model;
+                          rr.appendChild(option)
+                        x++;
+                        
+                      }
+                    }

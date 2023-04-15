@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
-        <form action="/cus_selectp" method="post">
-            
-
-            <select name="cus_select" id="cusSelect">
-           <option value="123456789">
-            Patricia
-           </option>
-
-            </select>
-            <button >Click Me!</button>
-        </form> 
+        <link rel="stylesheet" type="text/css" href="/css/style.css">      
     </head>
     <body>
+    
+        <div class="searchcontainer">
+           
+                    <form action="/cus_selectp" method="post" class="search-bar">
+                        <select name="cus_select" id="cusSelect">
+                            <option id = "option"value="123456789"><p id = "option">Patricia</p></option>
+                         </select>
+                            <button class="searchbtn" >Click Me!</button>
+            </form> 
+
+            
+        </div>
+
+
+
     <script>    
         var rr= document.getElementById("cusSelect");
         localStorage.setItem("customer", rr.value);
